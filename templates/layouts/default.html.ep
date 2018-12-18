@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+      %= stylesheet '/css/bootstrap.css'
+  </head>
+  <body><%= content %></body>
+</html>
