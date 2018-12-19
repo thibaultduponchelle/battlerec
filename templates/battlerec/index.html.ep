@@ -1,5 +1,5 @@
 % layout 'default';
-% title 'Welcome';
+% title 'Carriere';
 <div class="container">
 <h2><%= $msg %></h2>
 <br/>
@@ -20,8 +20,10 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>03-11-2018</td>
-      <td>Cheef</td>
+      <td>2018-11-22</td>
+<td>
+<a href="#" class="text-dark"><u><strong>Cheef</strong></u></a>
+</td>
 <td>
 <div class="text-success" style="display: inline-block;">7</div> 
 <div class="text-danger" style="display: inline-block;">1</div>
@@ -40,8 +42,10 @@
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>11-04-2018</td>
-      <td>Marti</td>
+      <td>2018-04-11</td>
+<td>
+<a href="#" class="text-dark"><u><strong>Marti</strong></u></a>
+</td>
 <td>
 <div class="text-success" style="display: inline-block;">4</div> 
 <div class="text-danger" style="display: inline-block;">2</div>
@@ -62,8 +66,10 @@
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>13-12-2017</td>
-      <td>Saminem</td>
+      <td>2017-12-13</td>
+<td>
+<a href="#" class="text-dark"><u><strong>Saminem</strong></u></a>
+</td>
 <td>
 <div class="text-success" style="display: inline-block;">2</div> 
 <div class="text-danger" style="display: inline-block;">3</div>
