@@ -1,25 +1,32 @@
 % layout 'default';
 % title 'Carriere';
 <div class="container">
-<h2><%= $msg %></h2>
-<br/>
-<br/>
 <div class="col-md-12">
-<table class="table">
+<div class="text-center">
+<h1><%= $msg %></h2>
+<button type="button" class="btn btn-success btn-lg" disabled="disabled">8</button>
+<button type="button" class="btn btn-danger btn-lg" disabled="disabled">1</button>
+<button type="button" class="btn btn-primary btn-lg" disabled="disabled">0</button>
+<br/>
+<img src="/img/<%= lc $msg %>.jpg"/>
+<br/>
+<br/>
+<br/>
+</div>
+<table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Date</th>
       <th scope="col">Adversaire</th>
       <th scope="col">V D N</th>
       <th scope="col">Derniers</th>
-      <th scope="col">Ligue</th>
+      <th scope="col">Event</th>
       <th scope="col">Resultat</th>
+      <th scope="col">Video</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
       <td>2018-11-22</td>
 <td>
 <a href="#" class="text-dark"><u><strong>Cheef</strong></u></a>
@@ -39,9 +46,13 @@
 <td>
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 </td>
+<td>
+<a href="#">
+<span class="glyphicon glyphicon-play-circle"></span>
+</a>
+</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
       <td>2018-04-11</td>
 <td>
 <a href="#" class="text-dark"><u><strong>Marti</strong></u></a>
@@ -60,12 +71,17 @@
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 </td>
       <td>Rap Contenders 12</td>
+
 <td>
-<button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+</td>
+<td>
+<a href="#">
+<span class="glyphicon glyphicon-play-circle"></span>
+</a>
 </td>
     </tr>
     <tr>
-      <th scope="row">3</th>
       <td>2017-12-13</td>
 <td>
 <a href="#" class="text-dark"><u><strong>Saminem</strong></u></a>
@@ -84,6 +100,10 @@
 <td>
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 </td>
+<td>
+<a href="#">
+<img class="btn" src="/img/play.jpg"/>
+</a>
     </tr>
   </tbody>
 </table>

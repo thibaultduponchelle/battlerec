@@ -6,7 +6,7 @@ sub index {
   my $self = shift;
   
   # Render template "battlerec/index.html.ep" with message
-  $self->render(msg => 'Welcome to the Mojolicious real-time web framework!');
+  $self->render(msg => 'Lamanif');
 }
 
 1;

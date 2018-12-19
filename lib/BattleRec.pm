@@ -15,7 +15,7 @@ sub startup {
   my $r = $self->routes;
 
   # Normal route to controller
-  $r->get('/')->to('battlerec#index');
+  $r->get('/mc/:name')->to('battlerec#index');
 }
 
 1;
