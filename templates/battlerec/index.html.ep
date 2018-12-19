@@ -1,17 +1,17 @@
 % layout 'default';
 % title 'Welcome';
+<div class="container">
 <h2><%= $msg %></h2>
-<p>
-  This page was generated from the template "templates/example/welcome.html.ep"
-  and the layout "templates/layouts/default.html.ep",
-  <%= link_to 'click here' => url_for %> to reload the page or
-  <%= link_to 'here' => '/index.html' %> to move forward to a static page.
+<br/>
+<br/>
+<div class="col-md-12">
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Dateth>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
       <th scope="col">Adversaire</th>
-      <th scope="col">V-D-E</th>
+      <th scope="col">V D N</th>
       <th scope="col">Derniers</th>
       <th scope="col">Ligue</th>
       <th scope="col">Resultat</th>
@@ -19,29 +19,67 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">2018</th>
+      <th scope="row">1</th>
+      <td>03-11-2018</td>
       <td>Cheef</td>
-      <td>3-1-0</td>
-      <td>VVDV</td>
-      <td>Rap Contenders</td>
-      <td>V</td>
+<td>
+<div class="text-success" style="display: inline-block;">7</div> 
+<div class="text-danger" style="display: inline-block;">1</div>
+<div class="text-primary" style="display: inline-block;">0</div>
+</td>
+<td>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+<button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
+</td>
+      <td>Rap Contenders 13</td>
+<td>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+</td>
     </tr>
     <tr>
-      <th scope="row">2018</th>
-      <td>Cheef</td>
-      <td>3-1-0</td>
-      <td>VVDV</td>
-      <td>Rap Contenders</td>
-      <td>V</td>
+      <th scope="row">2</th>
+      <td>11-04-2018</td>
+      <td>Marti</td>
+<td>
+<div class="text-success" style="display: inline-block;">4</div> 
+<div class="text-danger" style="display: inline-block;">2</div>
+<div class="text-primary" style="display: inline-block;">0</div>
+</td>
+<td>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+<button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
+<button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+</td>
+      <td>Rap Contenders 12</td>
+<td>
+<button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
+</td>
     </tr>
     <tr>
-      <th scope="row">2018</th>
-      <td>Cheef</td>
-      <td>3-1-0</td>
-      <td>VVDV</td>
-      <td>Rap Contenders</td>
-      <td>V</td>
+      <th scope="row">3</th>
+      <td>13-12-2017</td>
+      <td>Saminem</td>
+<td>
+<div class="text-success" style="display: inline-block;">2</div> 
+<div class="text-danger" style="display: inline-block;">3</div>
+<div class="text-primary" style="display: inline-block;">0</div>
+</td>
+<td>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+<button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+</td>
+      <td>Rap Contenders 10</td>
+<td>
+<button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+</td>
     </tr>
   </tbody>
 </table>
-</p>
+</div>
+</div>
