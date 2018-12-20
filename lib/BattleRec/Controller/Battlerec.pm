@@ -18,6 +18,12 @@ sub index {
   #  print "record : $rec\n";
   #}
   print "Name : $name Doc : $doc\n";
+  print "$doc->{date},$doc->{mc2},$doc->{event},$doc->{resultat},$doc->{video}\n";
+
+  my $docs = mango->db("battlerec")->collection("battles")->find({mc1 => "$name"})->sort({ date => -1 });
+  while (my $d = $docs->next) {
+    print "$d->{date},$d->{mc2},$d->{event},$d->{resultat},$d->{video}\n";
+  }
   
   
   # Render template "battlerec/index.html.ep" with message

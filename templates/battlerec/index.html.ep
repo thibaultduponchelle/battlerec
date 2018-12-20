@@ -3,7 +3,7 @@
 <div class="container">
 <div class="col-md-12">
 <div class="text-center">
-<h1><%= $msg %></h2>
+<h1 class="display-4"><%= $msg %></h1>
 <button type="button" class="btn btn-success btn-lg" disabled="disabled">8</button>
 <button type="button" class="btn btn-danger btn-lg" disabled="disabled">1</button>
 <button type="button" class="btn btn-primary btn-lg" disabled="disabled">0</button>
