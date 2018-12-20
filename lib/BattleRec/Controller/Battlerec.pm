@@ -88,7 +88,6 @@ sub mc {
 # This action will render a template
 sub index {
   my $self = shift;
-  my $event = $self->stash("event");
   
   my $docs = mango->db("battlerec")->collection("battles")->find()->sort({ date => -1 })->limit(1000);
 
