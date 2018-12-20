@@ -8,7 +8,7 @@ sub mango { state $m = Mango->new('mongodb://localhost:27017') };
 
 sub derniers($) {
   my $mc = shift;
-  my $docs = mango->db("battlerec")->collection("battles")->find({mc1 => "$mc"})->sort({ date => -1 });
+  my $docs = mango->db("battlerec")->collection("battles")->find({mc1 => "$mc"})->sort({ date => -1 })->limit(6);
   my $lasts = "";
   while (my $d = $docs->next) { $lasts .= $d->{resultat}; }
   print "MC : $mc Lasts : $lasts\n";
@@ -45,19 +45,26 @@ sub mc {
   my $self = shift;
   my $name = $self->stash("name");
   
-  my $docs = mango->db("battlerec")->collection("battles")->find({mc1 => "$name"})->sort({ date => -1 });
+  my $docs = mango->db("battlerec")->collection("battles")->find({'$or' => [{mc1 => "$name"}, {mc2 => "$name"}]})->sort({ date => -1 });
+  my $is_opponent = 0;
   my %derniers = (); 
   my %balance = (); 
   while (my $d = $docs->next) { 
-    $derniers{$d->{mc2}} = derniers($d->{mc2}); 
-    $balance{$d->{mc2}} = record($d->{mc2}); 
+    if($d->{mc1} eq $name) {
+      $derniers{$d->{mc2}} = derniers($d->{mc2}); 
+      $balance{$d->{mc2}} = record($d->{mc2}); 
+    } else {
+      $derniers{$d->{mc1}} = derniers($d->{mc1}); 
+      $balance{$d->{mc1}} = record($d->{mc1}); 
+    }
+
   } 
     
   $balance{$name} = record($name); 
 
   $docs->rewind;
   
-  $self->render(msg => $name, battles => $docs, derniers => \%derniers, balance => \%balance);
+  $self->render(mc => $name, battles => $docs, derniers => \%derniers, balance => \%balance);
 }
 
 # This action will render a template
@@ -68,7 +75,7 @@ sub event {
   my $docs = mango->db("battlerec")->collection("battles")->find({event => "$event"})->sort({ date => -1 });
   #while (my $d = $docs->next) { #  print "$d->{date},$d->{mc2},$d->{event},$d->{resultat},$d->{video}\n"; #}
   
-  $self->render(msg => 'Lamanif', battles => $docs);
+  $self->render(mc1 => 'Lamanif', battles => $docs);
 }
 
 1;

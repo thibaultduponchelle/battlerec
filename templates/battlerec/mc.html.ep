@@ -1,16 +1,16 @@
 % layout 'default';
-% title 'Carriere';
+% title "BattleRec: $mc";
 <div class="container">
 <div class="col-md-12">
 <div class="text-center">
-<h1 class="display-4"><%= $msg %></h1>
-<% my ($v, $d, $n) = split("-", $balance->{$msg}); %>
+<h1 class="display-4"><%= $mc %></h1>
+<% my ($v, $d, $n) = split("-", $balance->{$mc}); %>
 <button type="button" class="btn btn-success btn-lg" disabled="disabled"><%= $v %></button>
 <button type="button" class="btn btn-danger btn-lg" disabled="disabled"><%= $d %></button>
 <button type="button" class="btn btn-primary btn-lg" disabled="disabled"><%= $n %></button>
 <br/>
 <br/>
-<img src="/img/<%= lc $msg %>.jpg"/>
+<img src="/img/<%= lc $mc %>.jpg"/>
 <br/>
 <br/>
 <br/>
@@ -29,17 +29,25 @@
   </thead>
   <tbody>
 <% while(my $b = $battles->next) { %>
+<% my $opp; %>
+<% if($mc eq $b->{mc1}) { $opp = $b->{mc2}; } else { $opp = $b->{mc1}; } %>
+<% my $resultat; %>
+<% if($mc eq $b->{mc1}) { 
+     $resultat = $b->{resultat}; 
+   } else { 
+     if($b->{resultat} eq "V") { $resultat = "D"; } elsif($b->{resultat} eq "D") { $resultat = "V"; } else { $resultat = $b->{resultat}; }
+   } %>
     <tr>
       <td>2018-11-22</td>
-      <td><a href="/mc/<%=$b->{mc2}%>" class="text-dark"><u><strong><%= $b->{mc2} %></strong></u></a></td>
+      <td><a href="/mc/<%=$opp%>" class="text-dark"><u><strong><%= $opp %></strong></u></a></td>
       <td>
-          <% my ($v, $d, $n) = split("-", $balance->{$b->{mc2}}); %>
+          <% my ($v, $d, $n) = split("-", $balance->{$opp}); %>
           <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
           <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
           <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
       <td>
-          <% foreach my $r (split "", $derniers->{$b->{mc2}}) { 
+          <% foreach my $r (split "", $derniers->{$b->{$opp}}) { 
                if($r eq "V") { %>
                  <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
                <% } elsif($r eq "D") { %>
@@ -50,12 +58,12 @@
           <% } %>
       </td>
       <td><a href="#" class="text-dark"><u><strong><%= $b->{event} %></strong></u></a></td>
-      <% if($b->{resultat} eq "V") { %>
-        <td class="text-center"><button type="button" class="btn btn-success btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
-      <% } elsif($b->{resultat} eq "D") { %>
-        <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
+      <% if($resultat eq "V") { %>
+        <td class="text-center"><button type="button" class="btn btn-success btn-sm" disabled="disabled"><%= $resultat %></button></td>
+      <% } elsif($resultat eq "D") { %>
+        <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled="disabled"><%= $resultat %></button></td>
       <% } else { %>
-        <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
+        <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled="disabled"><%= $resultat %></button></td>
       <% } %>
       <td><a href="<%= $b->{video} %>"><span class="glyphicon glyphicon-play-circle"><%= $b->{video} %></span></a>
       </td>
