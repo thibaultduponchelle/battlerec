@@ -1,6 +1,12 @@
 package BattleRec;
 use Mojo::Base 'Mojolicious';
 
+use Mango;
+
+# Declare a Mango helper
+sub mango { state $m = Mango->new('mongodb://localhost:27017') };
+
+
 # This method will run once at server start
 sub startup {
   my $self = shift;
