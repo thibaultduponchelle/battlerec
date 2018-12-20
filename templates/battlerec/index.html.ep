@@ -21,7 +21,7 @@
       <th scope="col">V D N</th>
       <th scope="col">Derniers</th>
       <th scope="col">Event</th>
-      <th scope="col">Resultat</th>
+      <th scope="col" class="text-center">Resultat</th>
       <th scope="col">Video</th>
     </tr>
   </thead>
@@ -42,8 +42,10 @@
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 <button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
 </td>
-      <td>Rap Contenders 13</td>
 <td>
+<a href="#" class="text-dark"><u><strong>Rap Contenders 13</strong></u></a>
+</td>
+<td class="text-center">
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 </td>
 <td>
@@ -70,9 +72,12 @@
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 </td>
-      <td>Rap Contenders 12</td>
 
 <td>
+<a href="#" class="text-dark"><u><strong>Rap Contenders 12</strong></u></a>
+</td>
+
+<td class="text-center">
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 </td>
 <td>
@@ -96,8 +101,10 @@
 <button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 </td>
-      <td>Rap Contenders 10</td>
 <td>
+<a href="#" class="text-dark"><u><strong>Rap Contenders 10</strong></u></a>
+</td>
+<td class="text-center">
 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
 </td>
 <td>
