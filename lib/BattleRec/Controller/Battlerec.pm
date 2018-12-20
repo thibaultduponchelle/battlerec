@@ -23,13 +23,13 @@ sub record($) {
   my $d = 0;
   my $n = 0;
   while (my $b = $docs->next) { 
-    #if($b->{resultat} eq "V") { 
-    #  $v++;
-    #} elsif($b->{resultat} eq "D") {
-    #  $d++;
-    #} else { 
-    #  $n++;
-    #}
+    if($b->{resultat} eq "V") { 
+      $v++;
+    } elsif($b->{resultat} eq "D") {
+      $d++;
+    } else { 
+      $n++;
+    }
   }
 
   print "MC : $mc Record : $v-$d-$n\n";
@@ -47,15 +47,17 @@ sub mc {
   
   my $docs = mango->db("battlerec")->collection("battles")->find({mc1 => "$name"})->sort({ date => -1 });
   my %derniers = (); 
-  my %record = (); 
+  my %balance = (); 
   while (my $d = $docs->next) { 
     $derniers{$d->{mc2}} = derniers($d->{mc2}); 
-    $record{$d->{mc2}} = record($d->{mc2}); 
+    $balance{$d->{mc2}} = record($d->{mc2}); 
   } 
+    
+  $balance{$name} = record($name); 
 
   $docs->rewind;
   
-  $self->render(msg => 'Lamanif', battles => $docs, derniers => \%derniers, record => \%record);
+  $self->render(msg => $name, battles => $docs, derniers => \%derniers, balance => \%balance);
 }
 
 # This action will render a template
