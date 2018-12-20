@@ -22,7 +22,7 @@ sub startup {
 
   # Normal route to controller
   $r->get('/mc/:name')->to('battlerec#mc');
-  $r->get('/mc/:event')->to('battlerec#event');
+  $r->get('/')->to('battlerec#index');
 }
 
 1;

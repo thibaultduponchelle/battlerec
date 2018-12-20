@@ -65,7 +65,6 @@ sub mc {
   my $name = $self->stash("name");
   
   my $docs = mango->db("battlerec")->collection("battles")->find({'$or' => [{mc1 => "$name"}, {mc2 => "$name"}]})->sort({ date => -1 });
-  my $is_opponent = 0;
   my %derniers = (); 
   my %balance = (); 
   while (my $d = $docs->next) { 
@@ -87,14 +86,23 @@ sub mc {
 }
 
 # This action will render a template
-sub event {
+sub index {
   my $self = shift;
   my $event = $self->stash("event");
   
-  my $docs = mango->db("battlerec")->collection("battles")->find({event => "$event"})->sort({ date => -1 });
-  #while (my $d = $docs->next) { #  print "$d->{date},$d->{mc2},$d->{event},$d->{resultat},$d->{video}\n"; #}
-  
-  $self->render(mc1 => 'Lamanif', battles => $docs);
+  my $docs = mango->db("battlerec")->collection("battles")->find()->sort({ date => -1 })->limit(1000);
+
+  my %derniers = (); 
+  my %balance = (); 
+  while (my $d = $docs->next) { 
+    $derniers{$d->{mc2}} = derniers($d->{mc2}); 
+    $balance{$d->{mc2}} = record($d->{mc2}); 
+    $derniers{$d->{mc1}} = derniers($d->{mc1}); 
+    $balance{$d->{mc1}} = record($d->{mc1}); 
+  } 
+    
+  $docs->rewind;
+  $self->render(battles => $docs, derniers => \%derniers, balance => \%balance);
 }
 
 1;
