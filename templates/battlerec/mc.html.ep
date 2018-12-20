@@ -3,6 +3,10 @@
 <div class="container">
 <div class="col-md-12">
 <div class="text-center">
+<img src="/img/battlerecsimple.png"/>
+<br/>
+<br/>
+<br/>
 <h1 class="display-4"><%= $mc %></h1>
 <% my ($v, $d, $n) = split("-", $balance->{$mc}); %>
 <button type="button" class="btn btn-success btn-lg" disabled="disabled"><%= $v %></button>
@@ -10,7 +14,12 @@
 <button type="button" class="btn btn-primary btn-lg" disabled="disabled"><%= $n %></button>
 <br/>
 <br/>
+<%
+use Cwd; my $dir = getcwd; 
+my $file = "$dir/public/img/". lc($mc) .".jpg";
+if(-f $file) { %>
 <img src="/img/<%= lc $mc %>.jpg"/>
+<% } %>
 <br/>
 <br/>
 <br/>
