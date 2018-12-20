@@ -6,11 +6,23 @@ use Mango;
 # Declare a Mango helper
 sub mango { state $m = Mango->new('mongodb://localhost:27017') };
 
+sub inverser($) {
+  my $res = shift;
+  if($res eq "V") { return "D"; } elsif($res eq "D") { return "V"; } else { return $res; }
+}
+
 sub derniers($) {
   my $mc = shift;
-  my $docs = mango->db("battlerec")->collection("battles")->find({mc1 => "$mc"})->sort({ date => -1 })->limit(6);
+  my $docs = mango->db("battlerec")->collection("battles")->find({'$or' => [{mc1 => "$mc"}, {mc2 => "$mc"}]})->sort({ date => -1 })->limit(6);
   my $lasts = "";
-  while (my $d = $docs->next) { $lasts .= $d->{resultat}; }
+  while (my $d = $docs->next) { 
+    if($mc eq $d->{mc1}) {
+      $lasts .= $d->{resultat}; 
+    } else { 
+      $lasts .= inverser($d->{resultat}); 
+    }
+  }
+    
   print "MC : $mc Lasts : $lasts\n";
 
   return $lasts;
@@ -18,17 +30,27 @@ sub derniers($) {
 
 sub record($) {
   my $mc = shift;
-  my $docs = mango->db("battlerec")->collection("battles")->find({mc1 => "$mc"})->sort({ date => -1 });
+  my $docs = mango->db("battlerec")->collection("battles")->find({'$or' => [{mc1 => "$mc"}, {mc2 => "$mc"}]})->sort({ date => -1 });
   my $v = 0;
   my $d = 0;
   my $n = 0;
   while (my $b = $docs->next) { 
-    if($b->{resultat} eq "V") { 
-      $v++;
-    } elsif($b->{resultat} eq "D") {
-      $d++;
+    if($mc eq $b->{mc1}) {
+      if($b->{resultat} eq "V") { 
+        $v++;
+      } elsif($b->{resultat} eq "D") {
+        $d++;
+      } else { 
+        $n++;
+      }
     } else { 
-      $n++;
+       if($b->{resultat} eq "V") { 
+        $d++;
+      } elsif($b->{resultat} eq "D") {
+        $v++;
+      } else { 
+        $n++;
+      }
     }
   }
 
@@ -37,9 +59,6 @@ sub record($) {
   return "$v-$d-$n";
 }
  
-
-
-
 # This action will render a template
 sub mc {
   my $self = shift;
