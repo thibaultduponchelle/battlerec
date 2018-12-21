@@ -6,9 +6,8 @@
 <a href="/"><img src="/img/battlerecsimple.png"/></a>
 <br/>
 <br/>
-<br/>
 <h1 class="display-4"><%= $mc %></h1>
-<% my ($v, $d, $n) = split("-", $balance->{$mc}); %>
+<% my ($v, $d, $n) = split("-", $balance); %>
 <button type="button" class="btn btn-success btn-lg" disabled="disabled"><%= $v %></button>
 <button type="button" class="btn btn-danger btn-lg" disabled="disabled"><%= $d %></button>
 <button type="button" class="btn btn-primary btn-lg" disabled="disabled"><%= $n %></button>
@@ -39,7 +38,7 @@ if(-f $file) { %>
     </tr>
   </thead>
   <tbody>
-<% while(my $b = $battles->next) { %>
+<% foreach my $b (@$battles) { %>
 <% my $opp; %>
 <% if($mc eq $b->{mc1}) { $opp = $b->{mc2}; } else { $opp = $b->{mc1}; } %>
 <% my $resultat; %>
@@ -52,13 +51,13 @@ if(-f $file) { %>
       <td><%= $b->{date} %></td>
       <td><a href="/mc/<%=$opp%>" class="text-dark"><u><strong><%= $opp %></strong></u></a></td>
       <td>
-          <% my ($v, $d, $n) = split("-", $balance->{$opp}); %>
+          <% my ($v, $d, $n) = split("-", $b->{balance}); %>
           <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
           <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
           <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
       <td>
-          <% foreach my $r (split "", $derniers->{$opp}) { 
+          <% foreach my $r (split "", $b->{derniers}) { 
                if($r eq "V") { %>
                  <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
                <% } elsif($r eq "D") { %>

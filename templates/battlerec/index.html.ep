@@ -6,6 +6,8 @@
 <a href="/"><img src="/img/battlerecsimple.png"/></a>
 <br/>
 <br/>
+<h1 class="display-4">Recents</h1>
+<br/>
 <br/>
 </div>
 <table class="table table-sm">
@@ -24,18 +26,18 @@
     </tr>
   </thead>
   <tbody>
-<% while(my $b = $battles->next) { %>
+<% foreach my $b (@$battles) { %>
     <tr>
       <td><%= $b->{date} %></td>
       <td><a href="/mc/<%= $b->{mc1}%>" class="text-dark"><u><strong><%= $b->{mc1} %></strong></u></a></td>
       <td>
-          <% my ($v, $d, $n) = split("-", $balance->{$b->{mc1}}); %>
+          <% my ($v, $d, $n) = split("-", $b->{balancemc1}); %>
           <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
           <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
           <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
       <td>
-          <% foreach my $r (split "", $derniers->{$b->{mc1}}) { 
+          <% foreach my $r (split "", $b->{derniersmc1}) { 
                if($r eq "V") { %>
                  <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
                <% } elsif($r eq "D") { %>
@@ -54,13 +56,13 @@
       <% } %>
       <td><a href="/mc/<%= $b->{mc2}%>" class="text-dark"><u><strong><%= $b->{mc2} %></strong></u></a></td>
       <td>
-          <% my ($v, $d, $n) = split("-", $balance->{$b->{mc2}}); %>
+          <% my ($v, $d, $n) = split("-", $b->{balancemc2}); %>
           <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
           <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
           <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
       <td>
-          <% foreach my $r (split "", $derniers->{$b->{mc2}}) { 
+          <% foreach my $r (split "", $b->{derniersmc2}) { 
                if($r eq "V") { %>
                  <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
                <% } elsif($r eq "D") { %>
