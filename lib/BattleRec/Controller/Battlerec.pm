@@ -40,22 +40,16 @@ sub record($$) {
   my $d = 0;
   my $n = 0;
   while (my $b = $docs->next) { 
-    if($mc eq $b->{mc1}) {
-      if($b->{resultat} eq "V") { 
-        $v++;
-      } elsif($b->{resultat} eq "D") {
-        $d++;
-      } else { 
-        $n++;
-      }
-    } else { 
-       if($b->{resultat} eq "V") { 
-        $d++;
-      } elsif($b->{resultat} eq "D") {
-        $v++;
-      } else { 
-        $n++;
-      }
+    my $resultat = $b->{resultat};
+    if($mc eq $b->{mc2}) {
+      $resultat = inverser($resultat);
+    }
+    if($resultat eq "V") { 
+      $v++;
+    } elsif($resultat eq "D") {
+      $d++;
+    } elsif($resultat eq "N") {
+      $n++;
     }
   }
 
