@@ -67,7 +67,7 @@ sub mc {
   my @battles;
   while (my $d = $docs->next) { 
     my %battle = ();
-    foreach my $k (keys $d) {
+    foreach my $k (keys %$d) {
       $battle{$k} = $d->{$k};
     }
     if($d->{mc1} eq $name) {
@@ -94,7 +94,7 @@ sub index {
 
   while (my $d = $docs->next) { 
     my %battle = ();
-    foreach my $k (keys $d) {
+    foreach my $k (keys %$d) {
       $battle{$k} = $d->{$k};
     }
     $battle{derniersmc1} = derniers($d->{mc1}, $d->{date});
