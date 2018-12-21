@@ -1,7 +1,6 @@
 % layout 'default';
 % title "BattleRec: $mc";
-<div class="container">
-<div class="col-md-12">
+<div class="container-fluid">
 <div class="text-center">
 <a href="/"><img src="/img/battlerecsimple.png"/></a>
 <br/>
@@ -76,11 +75,10 @@ if(-f $file) { %>
         <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled="disabled"><%= $resultat %></button></td>
       <% } %>
 
-      <td><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a>
+      <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a>
       </td>
     </tr>
 <% } %>
 </tbody>
 </table>
-</div>
 </div>

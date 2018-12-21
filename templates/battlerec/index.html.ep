@@ -1,7 +1,6 @@
 % layout 'default';
 % title "BattleRec";
-<div class="container">
-<div class="col-md-12">
+<div class="container-fluid">
 <div class="text-center">
 <a href="/"><img src="/img/battlerecsimple.png"/></a>
 <br/>
@@ -74,11 +73,9 @@
       </td>
 
       <td><div class="text-dark"><strong><%= $b->{event} %></strong></div></td>
-      <td><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a>
-      </td>
+      <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a></td>
     </tr>
 <% } %>
 </tbody>
 </table>
-</div>
 </div>
