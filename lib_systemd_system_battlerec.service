@@ -1,0 +1,15 @@
+[Unit]
+Description=BattleRec.com Mojolicious Application
+After=network.target
+
+[Service]
+WorkingDirectory=/root/battlerec/
+Type=forking
+PIDFile=/root/battlerec/script/hypnotoad.pid
+ExecStart=/usr/local/bin/hypnotoad /root/battlerec/script/battle_rec
+ExecReload=/usr/local/bin/hypnotoad /root/battlerec/script/battle_rec
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+
