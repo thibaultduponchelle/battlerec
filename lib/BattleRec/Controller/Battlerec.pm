@@ -35,12 +35,13 @@ sub record($$) {
   my $mc = shift;
   my $date = shift;
 
-  my $docs = mango->db("battlerec")->collection("battles")->find({'$and' => [{date => {'$lt' => "$date"}} , {'$or' => [{mc1 => "$mc"}, {mc2 => "$mc"}]}]} )->sort({ date => -1 })->limit(5);
+  my $docs = mango->db("battlerec")->collection("battles")->find({'$and' => [{date => {'$lt' => "$date"}} , {'$or' => [{mc1 => "$mc"}, {mc2 => "$mc"}]}]} )->sort({ date => -1 });
   my $v = 0;
   my $d = 0;
   my $n = 0;
   while (my $b = $docs->next) { 
     my $resultat = $b->{resultat};
+    print "$mc resultat : $resultat\n";
     if($mc eq $b->{mc2}) {
       $resultat = inverser($resultat);
     }
