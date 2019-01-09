@@ -58,11 +58,11 @@ if(-f $file) { %>
       <td>
           <% foreach my $r (split "", $b->{derniers}) { 
                if($r eq "V") { %>
-                 <div class="badge badge-success" disabled="disabled">V</div>
+                 <div class="badge badge-success">&nbsp;</div>
                <% } elsif($r eq "D") { %>
-                 <div class="badge badge-danger" disabled="disabled">D</div>
+                 <div class="badge badge-danger">&nbsp;</div>
                <% } else { %>
-                 <div class="badge badge-primary" disabled="disabled">N</div>
+                 <div class="badge badge-primary">&nbsp;</div>
                <% } %>
           <% } %>
       </td>
