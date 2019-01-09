@@ -58,11 +58,11 @@ if(-f $file) { %>
       <td>
           <% foreach my $r (split "", $b->{derniers}) { 
                if($r eq "V") { %>
-                 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+                 <div class="badge badge-success" disabled="disabled">V</div>
                <% } elsif($r eq "D") { %>
-                 <button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
+                 <div class="badge badge-danger" disabled="disabled">D</div>
                <% } else { %>
-                 <button type="button" class="btn btn-primary btn-sm" disabled="disabled">N</button>
+                 <div class="badge badge-primary" disabled="disabled">N</div>
                <% } %>
           <% } %>
       </td>
@@ -72,7 +72,7 @@ if(-f $file) { %>
       <% } elsif($resultat eq "D") { %>
         <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled="disabled"><%= $resultat %></button></td>
       <% } else { %>
-        <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled="disabled"><%= $resultat %></button></td>
+        <td class="text-center"><button type="button" class="btn btn-warning btn-sm" disabled="disabled"><%= $resultat %></button></td>
       <% } %>
 
       <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a>

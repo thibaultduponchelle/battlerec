@@ -36,11 +36,11 @@
       <td>
           <% foreach my $r (split "", $b->{derniersmc1}) { 
                if($r eq "V") { %>
-                 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+                 <div class="badge badge-success">&nbsp;</div>
                <% } elsif($r eq "D") { %>
-                 <button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
+                 <div class="badge badge-danger">&nbsp;</div>
                <% } elsif($r eq "N") { %>
-                 <button type="button" class="btn btn-primary btn-sm" disabled="disabled">N</button>
+                 <div class="badge badge-primary">&nbsp;</div>
                <% } %>
           <% } %>
       </td>
@@ -63,11 +63,11 @@
       <td>
           <% foreach my $r (split "", $b->{derniersmc2}) { 
                if($r eq "V") { %>
-                 <button type="button" class="btn btn-success btn-sm" disabled="disabled">V</button>
+                 <div class="badge badge-success">&nbsp;</div>
                <% } elsif($r eq "D") { %>
-                 <button type="button" class="btn btn-danger btn-sm" disabled="disabled">D</button>
+                 <div class="badge badge-danger">&nbsp;</div>
                <% } elsif($r eq "N") { %>
-                 <button type="button" class="btn btn-primary btn-sm" disabled="disabled">N</button>
+                 <div class="badge badge-primary">&nbsp;</div>
                <% } %>
           <% } %>
       </td>
