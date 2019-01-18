@@ -55,7 +55,7 @@ Wojtek,2015/04/25,Maadou,Rap Contenders 9,V,,
 Smoothy,2015/04/25,Zomaken,Rap Contenders 9,V,,
 Marti,2015/04/25,2taf,Rap Contenders 9,V,,
 Godie,2015/04/25,Enerku,Rap Contenders 9,V,,
-Uno Lavoz,2015/04/25,Goodman,Rap Contenders 9,N,,
+Uno Lavoz,2015/04/25,Goodman,Rap Contenders 9,P,,
 Madmax,2015/04/25,Nelson Barros,Rap Contenders 9,V,,
 Louvar,2015/04/25,Vincenz,Rap Contenders 9,V,,
 Marshall’ombre,2015/04/25,Aladoum,Rap Contenders 9,V,,
@@ -74,21 +74,21 @@ Aparzite,2016/06/19,Bramzo,Rap Contenders 11,V,,
 Gaiden,2016/06/19,Marshall’ombre,Rap Contenders 11,V,,
 K5,2016/06/19,Mo The Fucker,Rap Contenders 11,V,,
 Marti,2016/06/19,Fleyo,Rap Contenders 11,V,,
-Lamanif,2016/06/19,St Saoul,Rap Contenders 11,N,,
+Lamanif,2016/06/19,St Saoul,Rap Contenders 11,P,,
 Maadou,2017/03/05,Taipan,Rap Contenders 12,N,,
 St Saoul,2017/03/05,2taf,Rap Contenders 12,V,,
 Mo The Fucker,2017/03/05,Parano,Rap Contenders 12,D,,
 Yoshi,2017/03/05,Aladoum,Rap Contenders 12,D,,
-K5,2017/03/05,Arno,Rap Contenders 12,N,,
-Aparzite,2017/03/05,Freddy Gruesum,Rap Contenders 12,N,,
-Louvar,2017/03/05,Chacalcolik,Rap Contenders 12,N,,
+K5,2017/03/05,Arno,Rap Contenders 12,P,,
+Aparzite,2017/03/05,Freddy Gruesum,Rap Contenders 12,P,,
+Louvar,2017/03/05,Chacalcolik,Rap Contenders 12,P,,
 Gaiden,2017/03/05,Marti,Rap Contenders 12,V,,
 Cheef,2017/07/01,Monk-E,Rap Contenders 13,V,,
 Bgl,2017/07/01,Maras,Rap Contenders 13,V,,
 Wojtek,2017/07/01,Hermano,Rap Contenders 13,V,,
 Pasteur H,2017/07/01,Ventouz,Rap Contenders 13,D,,
 K5,2017/07/01,Parano,Rap Contenders 13,V,,
-Aparzite,2017/07/01,Franko Bucci,Rap Contenders 13,N,,
+Aparzite,2017/07/01,Franko Bucci,Rap Contenders 13,P,,
 Mo The Fucker,2017/07/01,2taf,Rap Contenders 13,?,,
 Saminem,2017/07/01,Benji,Rap Contenders 13,?,,
 Tifreaks,2012/05/26,Hassa mers,Central Punch 1,N,,
@@ -116,10 +116,10 @@ Costa,2012/11/25,Ende,Madison Square Garden 3,V,,
 Tounss,2013/02/24,Tetris Syzif,Madison Square Garden 4,D,,
 Ere Mith,2013/02/24,Gram,Madison Square Garden 4,V,,
 Stans,2013/02/24,Snoupi Diime,Madison Square Garden 4,V,,
-Lamanif,2013/07/07,Gram,Madison Square Garden 5,N,,
+Lamanif,2013/07/07,Gram,Madison Square Garden 5,?,,
 Hermano,2013/07/07,Sixtape,Madison Square Garden 5,V,,
-Ende,2013/07/07,Daddy Keus,Madison Square Garden 5,N,,
-Ere Mith,2013/07/07,Tetris Syzif,Madison Square Garden 5,N,,
+Ende,2013/07/07,Daddy Keus,Madison Square Garden 5,?,,
+Ere Mith,2013/07/07,Tetris Syzif,Madison Square Garden 5,?,,
 Maadou,2014/01/19,Zomaken,Madison Square Garden 6,V,,
 Youm,2014/01/19,Tounss,Madison Square Garden 6,D,,
 Enerku,2014/01/19,Aladoum,Madison Square Garden 6,D,,
@@ -212,6 +212,15 @@ Booker Tea,2011/08/31,Sossa,Fuck That 1,V,,
 Etla,2011/08/31,Hermes,Fuck That 1,D,,
 Sek-L,2011/08/31,G-No,Fuck That 1,V,,
 Wojtek,2011/08/31,Teiso,Fuck That 1,V,,
+G-no,2012/09/25,Kalaz,Fuck That Audition,V,,
+Valain Delon,2012/09/25,Lacaz,Fuck That Audition,V,,
+Kame,2012/09/25,Enerku,Fuck That Audition,D,,
+Zomaken,2012/09/25,Laffreux,Fuck That Audition,V,,
+Mans,2012/09/25,Rod,Fuck That Audition,V,,
+Ixaya,2012/09/25,Djoelloco,Fuck That Audition,V,,
+Lonirique,2012/09/25,Phonetik,Fuck That Audition,D,,
+Mr Geezy,2012/09/25,Risk1,Fuck That Audition,D,,
+Lelex Luthor,2012/09/25,2taf,Fuck That Audition,D,,
 El Deterr,2015/09/13,Josman,RON 2015,D,,
 Igee,2016/09/10,Masta,RON 2016,D,,
 Holy Moe,2016/09/10,Masta,RON 2016,V,,
@@ -305,7 +314,7 @@ Ano,2013/01/26,CRC,PL2,V,,
 Youm,2013/01/26,Nat-J,PL2,D,,
 Trefle4,2013/01/26,Kastt,PL2,N,,
 Mesrine,2013/01/26,Arcanes,PL2,D,,
-Godie,2013/01/26,Est-K,PL2,N,,Pas juge
+Godie,2013/01/26,Est-K,PL2,P,,
 Louvar,2013/01/26,Maadou,PL2,N,,
 CRC,2013/03/24,Fab Mesa,PL3,D,,
 Ano,2013/03/24,Kastt,PL3,V,,
@@ -320,10 +329,10 @@ K-Rism,2013/07/07,Bamba,PL4,D,,
 Kastt,2013/07/07,CRC,PL4,D,,
 Red,2013/07/07,Phenix,PL4,D,,
 Maadou,2013/07/07,Lahcen Lupin,PL4,V,,
-Riiz,2013/08/11,Armando,PLT2,N,,Pas juge
-KRM,2013/08/11,Mo The Fucker,PLT2,N,,Pas juge
-Bouks,2013/08/11,Aparzite,PLT2,N,,Pas juge
-Le K,2013/08/11,Nesto,PLT2,N,,Pas juge
+Riiz,2013/08/11,Armando,PLT2,P,,
+KRM,2013/08/11,Mo The Fucker,PLT2,P,,
+Bouks,2013/08/11,Aparzite,PLT2,P,,
+Le K,2013/08/11,Nesto,PLT2,P,,
 Ano,2013/11/09,Marshall’ombre,PL5,D,,
 Aparzite,2013/11/09,Armando,PL5,V,,
 Bamba,2013/11/09,Youm,PL5,N,,
@@ -331,75 +340,75 @@ CRC,2013/11/09,Monteur Oner,PL5,V,,
 Lahcen Lupin,2013/11/09,Godie,PL5,D,,
 Le K,2013/11/09,Mister Ice,PL5,V,,
 Arcanes,2013/11/09,Witness,PL5,D,,
-Bouks,2013/12/28,Rik T,PLT3,N,,Pas juge
-Rygal,2013/12/28,Mo The Fucker,PLT3,N,,Pas juge
-Nesto,2013/12/28,KRM,PLT3,N,,Pas juge
-Scarp,2013/12/28,Lyric,PLT3,N,,Pas juge
-Marti,2013/12/28,Flow,PLT3,N,,Pas juge
-Benji,2013/12/28,Andra,PLT3,N,,Pas juge
+Bouks,2013/12/28,Rik T,PLT3,P,,
+Rygal,2013/12/28,Mo The Fucker,PLT3,P,,
+Nesto,2013/12/28,KRM,PLT3,P,,
+Scarp,2013/12/28,Lyric,PLT3,P,,
+Marti,2013/12/28,Flow,PLT3,P,,
+Benji,2013/12/28,Andra,PLT3,P,,
 Marshall’ombre,2014/03/22,Louvar,PL6,D,,Titre
 Red,2014/03/22,Marti,PL6,D,,
 Ano,2014/03/22,Bamba,PL6,D,,
 Armando,2014/03/22,Benji,PL6,V,,
-Godie,2014/03/22,Nem,PL6,N,,Pas juge
+Godie,2014/03/22,Nem,PL6,P,,
 Mo The Fucker,2014/03/22,Andra,PL6,V,,
 Lahcen Lupin,2014/03/22,2taf,PL6,D,,
 Aparzite,2014/03/22,Nesto,PL6,V,,
 Slider,2014/03/22,CRC,PL6,D,,
-Vator,2014/06/28,Bledz,PLT4,N,,Pas juge
-Kingstone,2014/06/28,Ito,PLT4,N,,Pas juge
-Tsuma H,2014/06/28,Reggy Ray,PLT4,N,,Pas juge
-Icare,2014/06/28,Cyrou,PLT4,N,,Pas juge
-Lizber,2014/06/28,Eds,PLT4,N,,Pas juge
-Keymy,2014/06/28,Bdj,PLT4,N,,Pas juge
+Vator,2014/06/28,Bledz,PLT4,P,,
+Kingstone,2014/06/28,Ito,PLT4,P,,
+Tsuma H,2014/06/28,Reggy Ray,PLT4,P,,
+Icare,2014/06/28,Cyrou,PLT4,P,,
+Lizber,2014/06/28,Eds,PLT4,P,,
+Keymy,2014/06/28,Bdj,PLT4,P,,
 Scarp,2014/11/02,Slider,PL7,D,,
-Gaiden,2014/11/02,Nem,PL7,N,,Pas juge
+Gaiden,2014/11/02,Nem,PL7,P,,
 CRC,2014/11/02,Aparzite,PL7,D,,
 Red,2014/11/02,Tsuma H,PL7,V,,
 Monteur Oner,2014/11/02,Armando,PL7,V,,
 Benji,2014/11/02,Marti,PL7,D,,
-Feukaz,2015/01/25,Lizber,PLT5,N,,Pas juge
-Cesar,2015/01/25,Alister,PLT5,N,,Pas juge
-Ito,2015/01/25,Kava,PLT5,N,,Pas juge
-Souverain,2015/01/25,Paradoxal,PLT5,N,,Pas juge
-Yessouf,2015/01/25,Reggy Ray,PLT5,N,,Pas juge
-Benji,2015/01/25,Maadou,PLT5,N,,Pas juge
-Godie,2015/03/29,CRC,PLT6,N,,"Pas juge, compliments"
-Mirsa,2015/03/29,Little,PLT6,N,,Pas juge
-Alister,2015/03/29,Lezko,PLT6,N,,Pas juge
-Cesar,2015/03/29,Souverain,PLT6,N,,Pas juge
-Mental,2015/03/29,Parano,PLT6,N,,Pas juge
-Ito,2015/03/29,Ganjo,PLT6,N,,Pas juge
-Feukaz,2015/03/29,Yessouf,PLT6,N,,Pas juge
-Maadou,2015/06/21,Suspek-T,PL8,N,,Pas juge
-Kava,2015/06/21,Armando,PL8,N,,Pas juge
-Slider,2015/06/21,Monteur Oner,PL8,N,,Pas juge
-2taf,2015/06/21,Benji,PL8,N,,Pas juge
-Parano,2015/06/21,Ganjo,PL8,N,,Pas juge
-Feukaz,2015/06/21,CRC,PL8,N,,Pas juge
-Yessouf,2015/06/21,Little,PL8,N,,Pas juge
-JCC,2015/06/21,Fleyo,PL8,N,,Pas juge
-Lamanif,2015/06/21,Marti,PL8,N,,Pas juge
-Lyrikan,2016/01/24,Mezgo,PLT7,N,,Pas juge
-Dome,2016/01/24,Kemar,PLT7,N,,Pas juge
-Lord Romeo,2016/01/24,Lou,PLT7,N,,Pas juge
-MC Kopat,2016/01/24,K5,PLT7,N,,Pas juge
-CRC,2016/03/26,Franko Bucci,PL9,N,,Pas juge
-Lahcen Lupin,2016/03/26,Yessouf,PL9,N,,Pas juge
-Fab Mesa,2016/03/26,Monteur Oner,PL9,N,,Pas juge
-Kemar,2016/03/26,K5,PL9,N,,Pas juge
-Godie,2016/03/26,Arno,PL9,N,,Pas juge
-Parano,2016/03/26,Feukaz,PL9,N,,Pas juge
-Aparzite,2016/03/26,Monk-E,PL9,N,,Pas juge
-Riddler,2016/06/05,Dh2o,PLT8,N,,Pas juge
-La Karabine,2016/06/05,Alister,PLT8,N,,Pas juge
-Mezgo,2016/06/05,Dng,PLT8,N,,Pas juge
+Feukaz,2015/01/25,Lizber,PLT5,P,,
+Cesar,2015/01/25,Alister,PLT5,P,,
+Ito,2015/01/25,Kava,PLT5,P,,
+Souverain,2015/01/25,Paradoxal,PLT5,P,,
+Yessouf,2015/01/25,Reggy Ray,PLT5,P,,
+Benji,2015/01/25,Maadou,PLT5,P,,
+Godie,2015/03/29,CRC,PLT6,P,,Compliments
+Mirsa,2015/03/29,Little,PLT6,P,,
+Alister,2015/03/29,Lezko,PLT6,P,,
+Cesar,2015/03/29,Souverain,PLT6,P,,
+Mental,2015/03/29,Parano,PLT6,P,,
+Ito,2015/03/29,Ganjo,PLT6,P,,
+Feukaz,2015/03/29,Yessouf,PLT6,P,,
+Maadou,2015/06/21,Suspek-T,PL8,P,,
+Kava,2015/06/21,Armando,PL8,P,,
+Slider,2015/06/21,Monteur Oner,PL8,P,,
+2taf,2015/06/21,Benji,PL8,P,,
+Parano,2015/06/21,Ganjo,PL8,P,,
+Feukaz,2015/06/21,CRC,PL8,P,,
+Yessouf,2015/06/21,Little,PL8,P,,
+JCC,2015/06/21,Fleyo,PL8,P,,
+Lamanif,2015/06/21,Marti,PL8,P,,
+Lyrikan,2016/01/24,Mezgo,PLT7,P,,
+Dome,2016/01/24,Kemar,PLT7,P,,
+Lord Romeo,2016/01/24,Lou,PLT7,P,,
+MC Kopat,2016/01/24,K5,PLT7,P,,
+CRC,2016/03/26,Franko Bucci,PL9,P,,
+Lahcen Lupin,2016/03/26,Yessouf,PL9,P,,
+Fab Mesa,2016/03/26,Monteur Oner,PL9,P,,
+Kemar,2016/03/26,K5,PL9,P,,
+Godie,2016/03/26,Arno,PL9,P,,
+Parano,2016/03/26,Feukaz,PL9,P,,
+Aparzite,2016/03/26,Monk-E,PL9,P,,
+Riddler,2016/06/05,Dh2o,PLT8,P,,
+La Karabine,2016/06/05,Alister,PLT8,P,,
+Mezgo,2016/06/05,Dng,PLT8,P,,
 Feukaz,2016/09/18,Monteur Oner,PL10,D,,
 La Karabine,2016/09/18,Lyrikan,PL10,V,,
 CRC,2016/09/18,Tsuma H,PL10,V,,
 Slider,2016/09/18,Fleyo,PL10,V,,
-K5,2016/09/18,J7,PL10,N,,Pas juge
-Louvar,2016/09/18,Woodman,PL10,N,,Pas juge
+K5,2016/09/18,J7,PL10,P,,
+Louvar,2016/09/18,Woodman,PL10,P,,
 Slider,2018/07/01,Lahcen Lupin,PL11,N,,
 La Karabine,2018/07/01,Chellaps,PL11,D,,
 CRC,2018/07/01,Parano,PL11,D,,
