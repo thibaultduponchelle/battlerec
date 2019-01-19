@@ -102,7 +102,6 @@ sub index {
       }
       push @battles, \%battle;
     }
-    $self->render(battles => \@battles);
   } else {
     my $docs = mango->db("battlerec")->collection("battles")->find()->sort({ date => -1 })->limit(1000);
     while (my $d = $docs->next) { 

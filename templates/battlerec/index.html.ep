@@ -50,6 +50,8 @@
         <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
       <% } elsif($b->{resultat} eq "N") { %>
         <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
+      <% } elsif($b->{resultat} eq "P") { %>
+        <td class="text-center"><button type="button" class="btn btn-warning btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
       <% } elsif($b->{resultat} eq "?") { %>
         <td class="text-center"><button type="button" class="btn btn-warning btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
       <% } %>
