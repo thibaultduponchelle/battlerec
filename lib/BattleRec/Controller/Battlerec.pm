@@ -88,23 +88,38 @@ sub mc {
 # This action will render a template
 sub index {
   my $self = shift;
-  
-  my $docs = mango->db("battlerec")->collection("battles")->find()->sort({ date => -1 })->limit(1000);
-  
+
   my @battles;
 
-  while (my $d = $docs->next) { 
-    my %battle = ();
-    foreach my $k (keys %$d) {
-      $battle{$k} = $d->{$k};
+  my $pcount = mango->db("battlerec")->collection("pbattles")->find()->count();
+  if($pcount > 0) {
+    print "TAKE FROM PRECOMPUTED PBATTLES\n";
+    my $docs = mango->db("battlerec")->collection("pbattles")->find()->sort({ date => -1 })->limit(1000);
+    while (my $d = $docs->next) { 
+      my %battle = ();
+      foreach my $k (keys %$d) {
+        $battle{$k} = $d->{$k};
+      }
+      push @battles, \%battle;
     }
-    $battle{derniersmc1} = derniers($d->{mc1}, $d->{date});
-    $battle{balancemc1} = record($d->{mc1}, $d->{date});
-    $battle{derniersmc2} = derniers($d->{mc2}, $d->{date});
-    $battle{balancemc2} = record($d->{mc2}, $d->{date});
+    $self->render(battles => \@battles);
+  } else {
+    my $docs = mango->db("battlerec")->collection("battles")->find()->sort({ date => -1 })->limit(1000);
+    while (my $d = $docs->next) { 
+      my %battle = ();
+      foreach my $k (keys %$d) {
+        $battle{$k} = $d->{$k};
+      }
+      $battle{derniersmc1} = derniers($d->{mc1}, $d->{date});
+      $battle{balancemc1} = record($d->{mc1}, $d->{date});
+      $battle{derniersmc2} = derniers($d->{mc2}, $d->{date});
+      $battle{balancemc2} = record($d->{mc2}, $d->{date});
     
-    push @battles, \%battle;
-  } 
+      push @battles, \%battle;
+      mango->db("battlerec")->collection("pbattles")->insert({ date =>$d->{date}, mc1 => $d->{mc1}, balancemc1 => $battle{balancemc1}, derniersmc1 => $battle{derniersmc1}, resultat => $d->{resultat}, mc2 => $d->{mc2}, balancemc2 => $battle{balancemc2}, derniersmc2 => $battle{derniersmc2}, event => $d->{event}, video => $d->{video} });
+    } 
+  }
+    
     
   $self->render(battles => \@battles);
 }
