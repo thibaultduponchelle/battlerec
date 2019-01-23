@@ -71,8 +71,12 @@ if(-f $file) { %>
         <td class="text-center"><button type="button" class="btn btn-success btn-sm" disabled="disabled"><%= $resultat %></button></td>
       <% } elsif($resultat eq "D") { %>
         <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled="disabled"><%= $resultat %></button></td>
+      <% } elsif($b->{resultat} eq "N") { %>
+        <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
+      <% } elsif($b->{resultat} eq "P") { %>
+        <td class="text-center"><button type="button" class="btn btn-warning btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
       <% } else { %>
-        <td class="text-center"><button type="button" class="btn btn-warning btn-sm" disabled="disabled"><%= $resultat %></button></td>
+        <td class="text-center"><button type="button" class="btn btn-default btn-sm" disabled="disabled"><%= $resultat %></button></td>
       <% } %>
 
       <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a>
