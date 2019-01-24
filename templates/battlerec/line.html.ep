@@ -1,0 +1,54 @@
+    <tr>
+      <td><%= $b->{date} %></td>
+      <td><a href="/mc/<%= $b->{mc1}%>" class="text-dark"><u><strong><%= $b->{mc1} %></strong></u></a></td>
+      <td>
+          <% my ($v, $d, $n) = split("-", $b->{balancemc1}); %>
+          <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
+          <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
+          <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
+      </td>
+      <td>
+          <% foreach my $r (split "", $b->{derniersmc1}) { 
+               if($r eq "V") { %>
+                 <div class="badge badge-success">&nbsp;</div>
+               <% } elsif($r eq "D") { %>
+                 <div class="badge badge-danger">&nbsp;</div>
+               <% } elsif($r eq "N") { %>
+                 <div class="badge badge-primary">&nbsp;</div>
+               <% } %>
+          <% } %>
+      </td>
+      <% if($b->{resultat} eq "V") { %>
+        <td class="text-center"><button type="button" class="btn btn-success btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
+      <% } elsif($b->{resultat} eq "D") { %>
+        <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
+      <% } elsif($b->{resultat} eq "N") { %>
+        <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
+      <% } elsif($b->{resultat} eq "P") { %>
+        <td class="text-center"><button type="button" class="btn btn-warning btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
+      <% } else { %>
+        <td class="text-center"><button type="button" class="btn btn-default btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
+      <% } %>
+      <td><a href="/mc/<%= $b->{mc2}%>" class="text-dark"><u><strong><%= $b->{mc2} %></strong></u></a></td>
+      <td>
+          <% my ($v, $d, $n) = split("-", $b->{balancemc2}); %>
+          <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
+          <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
+          <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
+      </td>
+      <td>
+          <% foreach my $r (split "", $b->{derniersmc2}) { 
+               if($r eq "V") { %>
+                 <div class="badge badge-success">&nbsp;</div>
+               <% } elsif($r eq "D") { %>
+                 <div class="badge badge-danger">&nbsp;</div>
+               <% } elsif($r eq "N") { %>
+                 <div class="badge badge-primary">&nbsp;</div>
+               <% } %>
+          <% } %>
+      </td>
+
+      <td><a href="/event/<%=$b->{event}%>"><div class="text-dark"><u><strong><%= $b->{event} %></strong></u></div></a></td>
+      <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a></td>
+    </tr>
+
