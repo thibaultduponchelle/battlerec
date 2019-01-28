@@ -13,7 +13,9 @@
                  <div class="badge badge-success">&nbsp;</div>
                <% } elsif($r eq "D") { %>
                  <div class="badge badge-danger">&nbsp;</div>
-               <% } elsif($r eq "N") { %>
+               <% } elsif($r eq "P") { %>
+                 <div class="badge badge-warning">&nbsp;</div>
+               <% } else { %>
                  <div class="badge badge-primary">&nbsp;</div>
                <% } %>
           <% } %>
