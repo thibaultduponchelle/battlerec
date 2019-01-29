@@ -6,6 +6,14 @@
 <br/>
 <br/>
 <br/>
+<% foreach my $ligue (@$ligues) { %>
+<button type="button" class="btn btn-outline-primary" style="margin-right:5px; margin-bottom:5px;" disabled="disabled"><a href="/ligue/<%= $ligue %>"><%= $ligue %></a></button>
+<% } %>
+<% foreach my $edition (@$editions) { %>
+<button type="button" class="btn btn-outline-primary" style="margin-right:5px; margin-bottom:5px;" disabled="disabled"><a href="/edition/<%= $edition %>"><%= $edition %></a></button>
+<% } %>
+<br/>
+<br/>
 </div>
 <table class="table table-sm">
   <thead>
@@ -18,7 +26,7 @@
       <th scope="col">Adversaire</th>
       <th scope="col">V D N</th>
       <th scope="col">Derniers</th>
-      <th scope="col">Event</th>
+      <th scope="col">Edition</th>
       <th scope="col">Video</th>
     </tr>
   </thead>

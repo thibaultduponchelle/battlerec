@@ -52,7 +52,7 @@
           <% } %>
       </td>
 
-      <td><a href="/event/<%=$b->{event}%>"><div class="text-dark"><u><strong><%= $b->{event} %></strong></u></div></a></td>
+      <td><a href="/edition/<%=$b->{edition}%>"><div class="text-dark"><u><strong><%= $b->{edition} %></strong></u></div></a></td>
       <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a></td>
     </tr>
 
