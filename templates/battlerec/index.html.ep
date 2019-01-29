@@ -7,10 +7,10 @@
 <br/>
 <br/>
 <% foreach my $ligue (@$ligues) { %>
-<button type="button" class="btn btn-outline-primary" style="margin-right:5px; margin-bottom:5px;" disabled="disabled"><a href="/ligue/<%= $ligue %>"><%= $ligue %></a></button>
+<a href="/ligue/<%= $ligue %>" class="btn btn-outline-primary" style="margin-right:5px; margin-bottom:5px;" disabled="disabled"><%= $ligue %></a>
 <% } %>
 <% foreach my $edition (@$editions) { %>
-<button type="button" class="btn btn-outline-primary" style="margin-right:5px; margin-bottom:5px;" disabled="disabled"><a href="/edition/<%= $edition %>"><%= $edition %></a></button>
+<a href="/edition/<%= $edition %>" class="btn btn-outline-primary" style="margin-right:5px; margin-bottom:5px;" disabled="disabled"><%= $edition %></a>
 <% } %>
 <br/>
 <br/>
