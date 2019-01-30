@@ -63,8 +63,10 @@ if(-f $file) { %>
                  <div class="badge badge-danger">&nbsp;</div>
                <% } elsif($r eq "P") { %>
                  <div class="badge badge-warning">&nbsp;</div>
-               <% } else { %>
+               <% } elsif($r eq "N") { %>
                  <div class="badge badge-primary">&nbsp;</div>
+               <% } else { %>
+                 <div class="badge badge-secondary">&nbsp;</div>
                <% } %>
           <% } %>
       </td>
