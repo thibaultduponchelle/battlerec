@@ -92,6 +92,8 @@ sub index {
   my @battles;
 
   my %elo = ();
+  my %xp = ();
+
   my $pcount = mango->db("battlerec")->collection("pbattles")->find()->count();
   if($pcount > 0) {
     print "TAKE FROM PRECOMPUTED PBATTLES\n";
@@ -136,7 +138,7 @@ sub index {
         elsif($d->{ligue} eq "Acapella Belgium Contest") { $K = 30; $J = 20; }
         elsif($d->{ligue} eq "Swiss Battlerap League") { $K = 20; $J = 30; }
         elsif($d->{ligue} eq "Battle PunchlinerZ") { $K = 20; $J = 30; }
-        elsif($d->{ligue} eq "Rap Battle Revelation") { $K = 10; $J = 40;}
+        elsif($d->{ligue} eq "Rap Battle Revelation") { $K = 20; $J = 30;}
         elsif($d->{ligue} eq "Battle Royale") { $K = 10; $J = 40; }
         else { $K = 5; $J = 60;}
 
@@ -168,6 +170,10 @@ sub index {
       #$elo{$d->{mc1}} = sprintf("%.0f", $elo{$d->{mc1}}); 
       #$elo{$d->{mc2}} = sprintf("%.0f", $elo{$d->{mc2}}); 
 
+      # Un battle de plus pour chaque MC
+      $xp{$d->{mc1}}++;
+      $xp{$d->{mc2}}++;
+
       $battle{derniersmc1} = derniers($d->{mc1}, $d->{date});
       $battle{balancemc1} = record($d->{mc1}, $d->{date});
       $battle{derniersmc2} = derniers($d->{mc2}, $d->{date});
@@ -182,6 +188,10 @@ sub index {
   foreach my $k (sort {$elo{$a} <=> $elo{$b}} keys %elo) {
     my $e = sprintf("%.0f", $elo{$k}); 
     print "Elo $k : $e\n";
+  }
+
+  foreach my $k (sort {$xp{$b} <=> $xp{$a}} keys %xp) {
+    print "$xp{$k} : $k\n";
   }
 
   my $values = mango->db("battlerec")->collection("battles")->find()->distinct('ligue');
