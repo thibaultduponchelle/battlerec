@@ -192,6 +192,7 @@ sub index {
 
   foreach my $k (sort {$xp{$b} <=> $xp{$a}} keys %xp) {
     print "$xp{$k} : $k\n";
+    mango->db("battlerec")->collection("xp")->insert({ mc => $k, combien => $xp{$k} });
   }
 
   my $values = mango->db("battlerec")->collection("battles")->find()->distinct('ligue');
