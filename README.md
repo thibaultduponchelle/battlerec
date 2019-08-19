@@ -2,7 +2,7 @@
 
 ## Summary 
 
-This is the code running [http://battlerec.com/}(http://battlerec.com/).
+This is the code running [http://battlerec.com/](http://battlerec.com/).
 
 ## Technical stack 
 
