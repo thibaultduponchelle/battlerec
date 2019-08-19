@@ -2,7 +2,11 @@
 
 ## Summary 
 
-This is the code running [http://battlerec.com/](http://battlerec.com/).
+This is the code running [battlerec.com](http://battlerec.com/).
+
+[battlerec.com](http://battlerec.com/) is a light [boxerec](https://boxrec.com/) clone for french battlerap scene.
+
+Bigup to all Battle MCs, this is thanks to them that we can enjoy epic battles and have a lot of fun.  
 
 ## Technical stack 
 
