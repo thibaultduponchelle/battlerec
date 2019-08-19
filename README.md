@@ -1,5 +1,7 @@
 # battlerec
 
+![](https://github.com/thibaultduponchelle/battlerec/blob/master/public/img/battlerecsimple.png)
+
 ## Summary 
 
 This is the code running [battlerec.com](http://battlerec.com/).
