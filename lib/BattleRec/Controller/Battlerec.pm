@@ -91,9 +91,6 @@ sub index {
 
   my @battles;
 
-  my %elo = ();
-  my %xp = ();
-
   my $pcount = mango->db("battlerec")->collection("pbattles")->find()->count();
   if($pcount > 0) {
     print "TAKE FROM PRECOMPUTED PBATTLES\n";
@@ -113,67 +110,6 @@ sub index {
         $battle{$k} = $d->{$k};
       }
 
-      my $DW = 0; my $EW = 0;
-      if($d->{resultat} eq "V") { $DW = 1; $EW = 0; } 
-      elsif($d->{resultat} eq "D") { $DW = 0; $EW = 1; }
-      elsif($d->{resultat} eq "N") { $DW = 0.5; $EW = 0.5; }
-     
-      
-      if(not defined($elo{$d->{mc1}})) { $elo{$d->{mc1}} = 1800; }
-      if(not defined($elo{$d->{mc2}})) { $elo{$d->{mc2}} = 1800; }
-
-      my $P = 1 / ( 1 + 10 ** (( ($elo{$d->{mc2}} - $elo{$d->{mc1}})) / 400  ));
-
-      if($DW + $EW > 0) {
-	my $K;
-        my $J;
-        if($d->{ligue} eq "Rap Contenders") { $K = 60; $J = 5;}
-        elsif($d->{ligue} eq "59 Arena") { $K = 30; $J = 20; }
-        elsif($d->{ligue} eq "Arene") { $K = 30; $J = 20; }
-        elsif($d->{ligue} eq "Punch Ligue") { $K = 30; $J = 20; }
-        elsif($d->{ligue} eq "Punch Mania") { $K = 30; $J = 20; }
-        elsif($d->{ligue} eq "Punch Airline") { $K = 30; $J = 20; }
-        elsif($d->{ligue} eq "Central Punch") { $K = 30; $J = 20; }
-        elsif($d->{ligue} eq "Madison Square Garden") { $K = 30; $J = 20; }
-        elsif($d->{ligue} eq "Acapella Belgium Contest") { $K = 30; $J = 20; }
-        elsif($d->{ligue} eq "Swiss Battlerap League") { $K = 20; $J = 30; }
-        elsif($d->{ligue} eq "Battle PunchlinerZ") { $K = 20; $J = 30; }
-        elsif($d->{ligue} eq "Rap Battle Revelation") { $K = 20; $J = 30;}
-        elsif($d->{ligue} eq "Battle Royale") { $K = 10; $J = 40; }
-        else { $K = 5; $J = 60;}
-
-        $K = $d->{K};
-        $J = $d->{J};
-      
-        # Coefficient different selon l'evenement
-        if($DW > $EW) { 
-          # Victoire MC1 
-          $elo{$d->{mc1}} = $elo{$d->{mc1}} + $K * ($DW - $P);
-          $elo{$d->{mc2}} = $elo{$d->{mc2}} + $J * ($EW - (1 - $P));
-        } elsif($EW > $DW) { 
-          # Victoire MC2
-          $elo{$d->{mc1}} = $elo{$d->{mc1}} + $J * ($DW - $P);
-          $elo{$d->{mc2}} = $elo{$d->{mc2}} + $K * ($EW - (1 - $P));
-        } else {
-          # Nul 
-          if(($DW - $P) > 0) { 
-            $elo{$d->{mc1}} = $elo{$d->{mc1}} + $K * ($DW - $P);
-            $elo{$d->{mc2}} = $elo{$d->{mc2}} + $J * ($EW - (1 - $P));
-          } elsif(($EW - (1 - $P)) > 0) {
-            $elo{$d->{mc1}} = $elo{$d->{mc1}} + $J * ($DW - $P);
-            $elo{$d->{mc2}} = $elo{$d->{mc2}} + $K * ($EW - (1 - $P));
-          }
-        }
-            
-      }
-
-      #$elo{$d->{mc1}} = sprintf("%.0f", $elo{$d->{mc1}}); 
-      #$elo{$d->{mc2}} = sprintf("%.0f", $elo{$d->{mc2}}); 
-
-      # Un battle de plus pour chaque MC
-      $xp{$d->{mc1}}++;
-      $xp{$d->{mc2}}++;
-
       $battle{derniersmc1} = derniers($d->{mc1}, $d->{date});
       $battle{balancemc1} = record($d->{mc1}, $d->{date});
       $battle{derniersmc2} = derniers($d->{mc2}, $d->{date});
@@ -182,17 +118,6 @@ sub index {
       push @battles, \%battle;
       mango->db("battlerec")->collection("pbattles")->insert({ date =>$d->{date}, mc1 => $d->{mc1}, balancemc1 => $battle{balancemc1}, derniersmc1 => $battle{derniersmc1}, resultat => $d->{resultat}, mc2 => $d->{mc2}, balancemc2 => $battle{balancemc2}, derniersmc2 => $battle{derniersmc2}, edition => $d->{edition}, ligue => $d->{ligue}, video => $d->{video} });
     } 
-  }
-
-  
-  foreach my $k (sort {$elo{$a} <=> $elo{$b}} keys %elo) {
-    my $e = sprintf("%.0f", $elo{$k}); 
-    print "Elo $k : $e\n";
-  }
-
-  foreach my $k (sort {$xp{$b} <=> $xp{$a}} keys %xp) {
-    print "$xp{$k} : $k\n";
-    mango->db("battlerec")->collection("xp")->insert({ mc => $k, combien => $xp{$k} });
   }
 
   my $values = mango->db("battlerec")->collection("battles")->find()->distinct('ligue');
