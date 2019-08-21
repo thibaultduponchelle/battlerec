@@ -1,88 +1,89 @@
 % layout 'default';
 % title "BattleRec: $mc";
-<div class="container-fluid">
-<div class="text-center">
-<a href="/"><img src="/img/battlerecsimple.png"/></a>
-<br/>
-<br/>
-<h1 class="display-4"><%= $mc %></h1>
-<% my ($v, $d, $n) = split("-", $balance); %>
-<button type="button" class="btn btn-success btn-lg" disabled="disabled"><%= $v %></button>
-<button type="button" class="btn btn-danger btn-lg" disabled="disabled"><%= $d %></button>
-<button type="button" class="btn btn-primary btn-lg" disabled="disabled"><%= $n %></button>
-<br/>
-<br/>
-<%
-use Cwd; my $dir = getcwd; 
-my $img = lc($mc);
-$img =~ s/ /_/g;
-my $file = "$dir/public/img/$img.jpg";
-if(-f $file) { %>
-<img src="/img/<%= $img %>.jpg"/>
-<% } %>
-<br/>
-<br/>
-<br/>
-</div>
-<table class="table table-sm">
-  <thead>
-    <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Adversaire</th>
-      <th scope="col">V D N</th>
-      <th scope="col">Derniers</th>
-      <th scope="col">Edition</th>
-      <th scope="col" class="text-center">Resultat</th>
-      <th scope="col">Video</th>
-    </tr>
-  </thead>
-  <tbody>
-<% foreach my $b (@$battles) { %>
-<% my $opp; %>
-<% if($mc eq $b->{mc1}) { $opp = $b->{mc2}; } else { $opp = $b->{mc1}; } %>
-<% my $resultat; %>
-<% if($mc eq $b->{mc1}) { 
-     $resultat = $b->{resultat}; 
-   } else { 
-     if($b->{resultat} eq "V") { $resultat = "D"; } elsif($b->{resultat} eq "D") { $resultat = "V"; } else { $resultat = $b->{resultat}; }
-   } %>
-    <tr>
-      <td><%= $b->{date} %></td>
-      <td><a href="/mc/<%=$opp%>" class="text-dark"><u><strong><%= $opp %></strong></u></a></td>
-      <td>
-        <% my ($v, $d, $n) = split("-", $b->{balance}); %>
-        <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
-        <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
-        <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
-      </td>
 
-      <%# Last results for MC %>
-      <% my %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
-      <td>
-        <% foreach my $r (split "", $b->{derniers}) { 
-          <% my $badgecolor = "badge-default"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
-          <div class="badge <%= $badgecolor %>">&nbsp;</div>
+    <div class="container-fluid">
+      <div class="text-center">
+        <a href="/"><img src="/img/battlerecsimple.png"/></a>
+        <br/>
+        <br/>
+        <h1 class="display-4"><%= $mc %></h1>
+        <% my ($v, $d, $n) = split("-", $balance); %>
+        <button type="button" class="btn btn-success btn-lg" disabled="disabled"><%= $v %></button>
+        <button type="button" class="btn btn-danger btn-lg" disabled="disabled"><%= $d %></button>
+        <button type="button" class="btn btn-primary btn-lg" disabled="disabled"><%= $n %></button>
+        <br/>
+        <br/>
+        <%
+        use Cwd; my $dir = getcwd; 
+        my $img = lc($mc);
+        $img =~ s/ /_/g;
+        my $file = "$dir/public/img/$img.jpg";
+        if(-f $file) { %>
+        <img src="/img/<%= $img %>.jpg"/>
         <% } %>
-      </td>
-
-      <%# Result battle %>
-      <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
-      <td><a href="/edition/<%=$b->{edition}%>"><div class="text-dark"><u><strong><%= $b->{edition} %></strong></u></div></a></td>
-      <% my $btncolor = "btn-default"; if(exists $colors{$b->{resultat}}) { $btncolor = "btn-" . $colors{$b->{resultat}}; } %>
-      <td class="text-center"><button type="button" class="btn <%= $btncolor %> btn-sm" disabled="disabled"><%= $resultat %></button></td>
-      <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a></td>
-    </tr>
-<% } %>
-</tbody>
-</table>
-</div>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37904912-8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-37904912-8');
-</script>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Adversaire</th>
+            <th scope="col">V D N</th>
+            <th scope="col">Derniers</th>
+            <th scope="col">Edition</th>
+            <th scope="col" class="text-center">Resultat</th>
+            <th scope="col">Video</th>
+          </tr>
+        </thead>
+        <tbody>
+      <% foreach my $b (@$battles) { %>
+      <% my $opp; %>
+      <% if($mc eq $b->{mc1}) { $opp = $b->{mc2}; } else { $opp = $b->{mc1}; } %>
+      <% my $resultat; %>
+      <% if($mc eq $b->{mc1}) { 
+           $resultat = $b->{resultat}; 
+         } else { 
+           if($b->{resultat} eq "V") { $resultat = "D"; } elsif($b->{resultat} eq "D") { $resultat = "V"; } else { $resultat = $b->{resultat}; }
+         } %>
+          <tr>
+            <td><%= $b->{date} %></td>
+            <td><a href="/mc/<%=$opp%>" class="text-dark"><u><strong><%= $opp %></strong></u></a></td>
+            <td>
+              <% my ($v, $d, $n) = split("-", $b->{balance}); %>
+              <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
+              <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
+              <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
+            </td>
+      
+            <%# Last results for MC %>
+            <% my %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
+            <td>
+              <% foreach my $r (split "", $b->{derniers}) { 
+                <% my $badgecolor = "badge-default"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
+                <div class="badge <%= $badgecolor %>">&nbsp;</div>
+              <% } %>
+            </td>
+      
+            <%# Result battle %>
+            <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
+            <td><a href="/edition/<%=$b->{edition}%>"><div class="text-dark"><u><strong><%= $b->{edition} %></strong></u></div></a></td>
+            <% my $btncolor = "btn-default"; if(exists $colors{$b->{resultat}}) { $btncolor = "btn-" . $colors{$b->{resultat}}; } %>
+            <td class="text-center"><button type="button" class="btn <%= $btncolor %> btn-sm" disabled="disabled"><%= $resultat %></button></td>
+            <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a></td>
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37904912-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-37904912-8');
+    </script>
