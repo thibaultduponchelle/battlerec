@@ -4,5 +4,7 @@
     <title><%= title %></title>
       %= stylesheet '/css/bootstrap.css'
   </head>
-  <body><%= content %></body>
+  <body>
+    <%= content %>
+  </body>
 </html>
