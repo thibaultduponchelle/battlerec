@@ -6,11 +6,13 @@ use Mango;
 # Declare a Mango helper
 sub mango { state $m = Mango->new('mongodb://localhost:27017') };
 
+# Give the battle result from the opponent point of view
 sub inverser($) {
   my $res = shift;
   if($res eq "V") { return "D"; } elsif($res eq "D") { return "V"; } else { return $res; }
 }
 
+# Last results from the battle MC before a given date
 sub derniers($$) {
   my $mc = shift;
   my $date = shift;
@@ -28,6 +30,7 @@ sub derniers($$) {
   return $lasts;
 }
 
+# The Victories-Draws-Looses palmares for a battle MC before a given date
 sub record($$) {
   my $mc = shift;
   my $date = shift;
@@ -52,8 +55,29 @@ sub record($$) {
 
   return "$v-$d-$n";
 }
+
+
+# This action will prepare an optimized table where all MC palmares is computed so that next time we just have to select and print lines
+sub precompute {
+    print "We have to precompute... Please wait a moment\n";
+    my $docs = mango->db("battlerec")->collection("battles")->find()->sort({ date => -1 })->limit(1000);
+    while (my $d = $docs->next) { 
+      my %battle = ();
+      foreach my $k (keys %$d) {
+        $battle{$k} = $d->{$k};
+      }
+
+      $battle{derniersmc1} = derniers($d->{mc1}, $d->{date});
+      $battle{balancemc1} = record($d->{mc1}, $d->{date});
+      $battle{derniersmc2} = derniers($d->{mc2}, $d->{date});
+      $battle{balancemc2} = record($d->{mc2}, $d->{date});
+    
+      mango->db("battlerec")->collection("pbattles")->insert({ date =>$d->{date}, mc1 => $d->{mc1}, balancemc1 => $battle{balancemc1}, derniersmc1 => $battle{derniersmc1}, resultat => $d->{resultat}, mc2 => $d->{mc2}, balancemc2 => $battle{balancemc2}, derniersmc2 => $battle{derniersmc2}, edition => $d->{edition}, ligue => $d->{ligue}, video => $d->{video} });
+    } 
+}
+
  
-# This action will render a template
+# This action will render the battle MC recap
 sub mc {
   my $self = shift;
   my $name = $self->stash("name");
@@ -79,27 +103,7 @@ sub mc {
   $self->render(mc => $name, battles => \@battles, balance => $balance);
 }
 
-# This action will prepare an optimized table where all MC palmares is computed so that next time we just have to select and print lines
-sub precompute {
-    print "We have to precompute... Please wait a moment\n";
-    my $docs = mango->db("battlerec")->collection("battles")->find()->sort({ date => -1 })->limit(1000);
-    while (my $d = $docs->next) { 
-      my %battle = ();
-      foreach my $k (keys %$d) {
-        $battle{$k} = $d->{$k};
-      }
-
-      $battle{derniersmc1} = derniers($d->{mc1}, $d->{date});
-      $battle{balancemc1} = record($d->{mc1}, $d->{date});
-      $battle{derniersmc2} = derniers($d->{mc2}, $d->{date});
-      $battle{balancemc2} = record($d->{mc2}, $d->{date});
-    
-      mango->db("battlerec")->collection("pbattles")->insert({ date =>$d->{date}, mc1 => $d->{mc1}, balancemc1 => $battle{balancemc1}, derniersmc1 => $battle{derniersmc1}, resultat => $d->{resultat}, mc2 => $d->{mc2}, balancemc2 => $battle{balancemc2}, derniersmc2 => $battle{derniersmc2}, edition => $d->{edition}, ligue => $d->{ligue}, video => $d->{video} });
-    } 
-
-}
-
-# This action will render a template
+# This action will render the main page with all battles from our database
 sub index {
   my $self = shift;
 
@@ -123,7 +127,7 @@ sub index {
   $self->render(battles => \@battles, ligues => \@ligues, editions => \@editions);
 }
 
-# This action will render a template
+# This action will render all battles from an event
 sub edition {
   my $self = shift;
   my $edition = $self->stash("edition");
@@ -148,7 +152,7 @@ sub edition {
   $self->render(template => 'battlerec/index', battles => \@battles, ligues => \@ligues, editions => \@editions);
 }
 
-# This action will render a template
+# This action will render all battles from a league (set of events from the same organizer crew)
 sub ligue {
   my $self = shift;
   my $ligue = $self->stash("ligue");
