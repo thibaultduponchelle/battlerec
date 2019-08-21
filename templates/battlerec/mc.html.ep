@@ -50,29 +50,27 @@ if(-f $file) { %>
       <td><%= $b->{date} %></td>
       <td><a href="/mc/<%=$opp%>" class="text-dark"><u><strong><%= $opp %></strong></u></a></td>
       <td>
-          <% my ($v, $d, $n) = split("-", $b->{balance}); %>
-          <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
-          <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
-          <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
+        <% my ($v, $d, $n) = split("-", $b->{balance}); %>
+        <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
+        <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
+        <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
 
       <%# Last results for MC %>
       <% my %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td>
-          <% foreach my $r (split "", $b->{derniers}) { 
-               <% my $badgecolor = "badge-default"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
-               <div class="badge <%= $badgecolor %>">&nbsp;</div>
-          <% } %>
+        <% foreach my $r (split "", $b->{derniers}) { 
+          <% my $badgecolor = "badge-default"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
+          <div class="badge <%= $badgecolor %>">&nbsp;</div>
+        <% } %>
       </td>
 
       <%# Result battle %>
       <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td><a href="/edition/<%=$b->{edition}%>"><div class="text-dark"><u><strong><%= $b->{edition} %></strong></u></div></a></td>
       <% my $btncolor = "btn-default"; if(exists $colors{$b->{resultat}}) { $btncolor = "btn-" . $colors{$b->{resultat}}; } %>
-        <td class="text-center"><button type="button" class="btn <%= $btncolor %> btn-sm" disabled="disabled"><%= $resultat %></button></td>
-
-      <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a>
-      </td>
+      <td class="text-center"><button type="button" class="btn <%= $btncolor %> btn-sm" disabled="disabled"><%= $resultat %></button></td>
+      <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a></td>
     </tr>
 <% } %>
 </tbody>

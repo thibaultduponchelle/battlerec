@@ -2,19 +2,19 @@
       <td><%= $b->{date} %></td>
       <td><a href="/mc/<%= $b->{mc1}%>" class="text-dark"><u><strong><%= $b->{mc1} %></strong></u></a></td>
       <td>
-          <% my ($v, $d, $n) = split("-", $b->{balancemc1}); %>
-          <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
-          <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
-          <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
+        <% my ($v, $d, $n) = split("-", $b->{balancemc1}); %>
+        <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
+        <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
+        <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
 
       <%# Palmares first MC %>
       <% my %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td>
-          <% foreach my $r (split "", $b->{derniersmc1}) { 
-               <% my $badgecolor = "badge-default"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
-               <div class="badge <%= $badgecolor %>">&nbsp;</div>
-          <% } %>
+        <% foreach my $r (split "", $b->{derniersmc1}) { 
+          <% my $badgecolor = "badge-default"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
+          <div class="badge <%= $badgecolor %>">&nbsp;</div>
+        <% } %>
       </td>
 
       <%# Result battle %>
@@ -23,19 +23,19 @@
       <td class="text-center"><button type="button" class="btn <%= $btncolor %> btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
       <td><a href="/mc/<%= $b->{mc2}%>" class="text-dark"><u><strong><%= $b->{mc2} %></strong></u></a></td>
       <td>
-          <% my ($v, $d, $n) = split("-", $b->{balancemc2}); %>
-          <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
-          <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
-          <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
+        <% my ($v, $d, $n) = split("-", $b->{balancemc2}); %>
+        <div class="text-success" style="display: inline-block;"><strong><%= $v %></strong></div> 
+        <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
+        <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
       
       <%# Palmares second MC %>
       <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td>
-          <% foreach my $r (split "", $b->{derniersmc2}) { 
-               <% my $badgecolor = "badge-secondary"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
-               <div class="badge <%= $badgecolor %>">&nbsp;</div>
-          <% } %>
+        <% foreach my $r (split "", $b->{derniersmc2}) { 
+          <% my $badgecolor = "badge-secondary"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
+          <div class="badge <%= $badgecolor %>">&nbsp;</div>
+        <% } %>
       </td>
 
       <td><a href="/edition/<%=$b->{edition}%>"><div class="text-dark"><u><strong><%= $b->{edition} %></strong></u></div></a></td>

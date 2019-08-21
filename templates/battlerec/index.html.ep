@@ -1,5 +1,6 @@
 % layout 'default';
 % title "BattleRec";
+
 <div class="container-fluid">
 <div class="text-center">
 <a href="/"><img src="/img/battlerecsimple.png"/></a>
