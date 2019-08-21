@@ -55,33 +55,21 @@ if(-f $file) { %>
           <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
           <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
+
+      <%# Last results for MC %>
+      <% my %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td>
           <% foreach my $r (split "", $b->{derniers}) { 
-               if($r eq "V") { %>
-                 <div class="badge badge-success">&nbsp;</div>
-               <% } elsif($r eq "D") { %>
-                 <div class="badge badge-danger">&nbsp;</div>
-               <% } elsif($r eq "P") { %>
-                 <div class="badge badge-warning">&nbsp;</div>
-               <% } elsif($r eq "N") { %>
-                 <div class="badge badge-primary">&nbsp;</div>
-               <% } else { %>
-                 <div class="badge badge-secondary">&nbsp;</div>
-               <% } %>
+               <% my $badgecolor = "badge-default"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
+               <div class="badge <%= $badgecolor %>">&nbsp;</div>
           <% } %>
       </td>
+
+      <%# Result battle %>
+      <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td><a href="/edition/<%=$b->{edition}%>"><div class="text-dark"><u><strong><%= $b->{edition} %></strong></u></div></a></td>
-      <% if($resultat eq "V") { %>
-        <td class="text-center"><button type="button" class="btn btn-success btn-sm" disabled="disabled"><%= $resultat %></button></td>
-      <% } elsif($resultat eq "D") { %>
-        <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled="disabled"><%= $resultat %></button></td>
-      <% } elsif($b->{resultat} eq "N") { %>
-        <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
-      <% } elsif($b->{resultat} eq "P") { %>
-        <td class="text-center"><button type="button" class="btn btn-warning btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
-      <% } else { %>
-        <td class="text-center"><button type="button" class="btn btn-default btn-sm" disabled="disabled"><%= $resultat %></button></td>
-      <% } %>
+      <% my $btncolor = "btn-default"; if(exists $colors{$b->{resultat}}) { $btncolor = "btn-" . $colors{$b->{resultat}}; } %>
+        <td class="text-center"><button type="button" class="btn <%= $btncolor %> btn-sm" disabled="disabled"><%= $resultat %></button></td>
 
       <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a>
       </td>

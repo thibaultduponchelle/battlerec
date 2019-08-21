@@ -8,7 +8,7 @@
           <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
 
-      <%== Palmares first MC %>
+      <%# Palmares first MC %>
       <% my %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td>
           <% foreach my $r (split "", $b->{derniersmc1}) { 
@@ -17,7 +17,7 @@
           <% } %>
       </td>
 
-      <%== Result battle %>
+      <%# Result battle %>
       <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <% my $btncolor = "btn-default"; if(exists $colors{$b->{resultat}}) { $btncolor = "btn-" . $colors{$b->{resultat}}; } %>
       <td class="text-center"><button type="button" class="btn <%= $btncolor %> btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
@@ -29,7 +29,7 @@
           <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
       
-      <%== Palmares second MC %>
+      <%# Palmares second MC %>
       <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td>
           <% foreach my $r (split "", $b->{derniersmc2}) { 
