@@ -7,32 +7,20 @@
           <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
           <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
+
+      <%== Palmares first MC %>
+      <% my %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td>
           <% foreach my $r (split "", $b->{derniersmc1}) { 
-               if($r eq "V") { %>
-                 <div class="badge badge-success">&nbsp;</div>
-               <% } elsif($r eq "D") { %>
-                 <div class="badge badge-danger">&nbsp;</div>
-               <% } elsif($r eq "P") { %>
-                 <div class="badge badge-warning">&nbsp;</div>
-               <% } elsif($r eq "N") { %>
-                 <div class="badge badge-primary">&nbsp;</div>
-               <% } else { %>
-                 <div class="badge badge-secondary">&nbsp;</div>
-               <% } %>
+               <% my $badgecolor = "badge-default"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
+               <div class="badge <%= $badgecolor %>">&nbsp;</div>
           <% } %>
       </td>
-      <% if($b->{resultat} eq "V") { %>
-        <td class="text-center"><button type="button" class="btn btn-success btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
-      <% } elsif($b->{resultat} eq "D") { %>
-        <td class="text-center"><button type="button" class="btn btn-danger btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
-      <% } elsif($b->{resultat} eq "N") { %>
-        <td class="text-center"><button type="button" class="btn btn-primary btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
-      <% } elsif($b->{resultat} eq "P") { %>
-        <td class="text-center"><button type="button" class="btn btn-warning btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
-      <% } else { %>
-        <td class="text-center"><button type="button" class="btn btn-default btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
-      <% } %>
+
+      <%== Result battle %>
+      <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
+      <% my $btncolor = "btn-default"; if(exists $colors{$b->{resultat}}) { $btncolor = "btn-" . $colors{$b->{resultat}}; } %>
+      <td class="text-center"><button type="button" class="btn <%= $btncolor %> btn-sm" disabled="disabled"><%= $b->{resultat} %></button></td>
       <td><a href="/mc/<%= $b->{mc2}%>" class="text-dark"><u><strong><%= $b->{mc2} %></strong></u></a></td>
       <td>
           <% my ($v, $d, $n) = split("-", $b->{balancemc2}); %>
@@ -40,19 +28,13 @@
           <div class="text-danger" style="display: inline-block;"><strong><%= $d %></strong></div>
           <div class="text-primary" style="display: inline-block;"><strong><%= $n %></strong></div>
       </td>
+      
+      <%== Palmares second MC %>
+      <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td>
           <% foreach my $r (split "", $b->{derniersmc2}) { 
-               if($r eq "V") { %>
-                 <div class="badge badge-success">&nbsp;</div>
-               <% } elsif($r eq "D") { %>
-                 <div class="badge badge-danger">&nbsp;</div>
-               <% } elsif($r eq "P") { %>
-                 <div class="badge badge-warning">&nbsp;</div>
-               <% } elsif($r eq "N") { %>
-                 <div class="badge badge-primary">&nbsp;</div>
-               <% } else { %>
-                 <div class="badge badge-secondary">&nbsp;</div>
-               <% } %>
+               <% my $badgecolor = "badge-secondary"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
+               <div class="badge <%= $badgecolor %>">&nbsp;</div>
           <% } %>
       </td>
 
