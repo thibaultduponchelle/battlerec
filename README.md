@@ -12,7 +12,12 @@ Bigup to all Battle MCs, this is thanks to you :kissing_heart: and event organiz
 
 ## Website navigation 
 
-There are numerous labels on the website that you can click to navigate towards a page dedicated to a **MC** (click on MC name) or **League** (click on league in event page) or **Event** (click on event name in main page or league page) or go back to **Main page** (click on logo)
+There are numerous labels on the website that you can click to navigate :
+
+- Go to a page dedicated to a **MC** (click on MC name) 
+- Go to a page dedicated to a **League** (click on league in event page) 
+- Go to a page dedicated to a **Event** (click on event name in main page or league page) 
+- Or go back to **Main page** (click on logo)
 
 ![Navigate on battlerec](doc/battlerecnavigation.png)
 
