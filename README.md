@@ -16,11 +16,13 @@ It is written in Perl :heart: and the web framework [Mojolicious](https://mojoli
 
 The data are initially in a csv file [data.csv](https://github.com/thibaultduponchelle/battlerec/blob/master/data.csv)
 
-Then imported in [MongoDB](https://www.mongodb.com/) using the driver [Mango](https://metacpan.org/pod/Mango).
+Then imported in [MongoDB](https://www.mongodb.com/) using `mongoimport`.
 
-And finally exposed by [hypnotoad](https://mojolicious.org/perldoc/Mojo/Server/Hypnotoad) (from [Mojolicious](https://mojolicious.org/)).
+Then the data is retrieved thanks to the driver [Mango](https://metacpan.org/pod/Mango).
 
-It also uses [bootstrap](https://getbootstrap.com/) for styling tables and badges/buttons.
+And served by [hypnotoad](https://mojolicious.org/perldoc/Mojo/Server/Hypnotoad) (from [Mojolicious](https://mojolicious.org/)).
+
+With some [bootstrap](https://getbootstrap.com/) for styling tables/badges/buttons.
 
 ### Data flow 
 
