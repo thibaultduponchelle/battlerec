@@ -16,7 +16,7 @@ It is written in Perl :heart: and the web framework [Mojolicious](https://mojoli
 
 The data are initially written in a csv file [data.csv](https://github.com/thibaultduponchelle/battlerec/blob/master/data.csv)
 
-Then imported in [MongoDB](https://www.mongodb.com/) using the driver ([Mango](https://metacpan.org/pod/Mango)).
+Then imported in [MongoDB](https://www.mongodb.com/) using the driver [Mango](https://metacpan.org/pod/Mango).
 
 And finally exposed by [hypnotoad](https://mojolicious.org/perldoc/Mojo/Server/Hypnotoad) (from [Mojolicious](https://mojolicious.org/)).
 
