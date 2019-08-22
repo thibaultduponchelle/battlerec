@@ -44,4 +44,4 @@ Use `morbo script/battle_rec` to start serving your [localhost instance](http://
 
 - **lib_systemd_system_battlerec.service** : this file goes in **/lib/systemd/system/battlerec.service**
 
-Use **hypnotoad** to serve your application
+Use `service battlerec start` to serve your application
