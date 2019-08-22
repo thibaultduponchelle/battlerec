@@ -8,7 +8,7 @@ This is the code running [battlerec.com](http://battlerec.com/).
 
 [battlerec.com](http://battlerec.com/) is a light [boxrec](https://boxrec.com/) clone for french battlerap scene.
 
-Bigup to all Battle MCs, this is thanks to you and event organizers that we can enjoy epic battles and have a lot of fun.  
+Bigup to all Battle MCs, this is thanks to you heart_eyes and event organizers that we can enjoy epic battles and have a lot of fun.  
 
 ## Technical stack 
 
