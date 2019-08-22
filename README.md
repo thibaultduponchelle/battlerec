@@ -37,6 +37,11 @@ With some [bootstrap](https://getbootstrap.com/) for styling tables/badges/butto
 - **setup.sh** : To setup the dev environment 
 - **data.csv** : contains list of battles 
 - **initdb.sh** : remove data from mongodb then import new data from data.csv file. First load of the website will be slow as it has to precompute the data (`battles` -> `pbattles`) 
-- **lib_systemd_system_battlerec.service** : this file goes in **/lib/systemd/system/battlerec.service** (not needed for dev environment)
 
 Use `morbo script/battle_rec` to start serving your [localhost instance](http://localhost:3000)
+
+### Production
+
+- **lib_systemd_system_battlerec.service** : this file goes in **/lib/systemd/system/battlerec.service**
+
+Use **hypnotoad** to serve your application
