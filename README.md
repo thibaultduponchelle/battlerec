@@ -19,3 +19,11 @@ The data is initially written in a csv file [data.csv](https://github.com/thibau
 Then imported in [MongoDB](https://www.mongodb.com/) using the driver ([Mango](https://metacpan.org/pod/Mango)).
 
 And finally exposed by [hypnotoad](https://mojolicious.org/perldoc/Mojo/Server/Hypnotoad) (from [Mojolicious](https://mojolicious.org/)).
+
+### Data flow 
+
+![Data import flow](battlerecdb.png)
+
+### Serving the website 
+
+![Hypnotoad serving battlerec](battlerecserver.png)
