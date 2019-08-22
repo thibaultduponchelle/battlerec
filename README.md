@@ -4,7 +4,7 @@
 
 ## Summary 
 
-This is the code running [battlerec.com](http://battlerec.com/).
+This is the code running [battlerec.com](http://battlerec.com/)
 
 [battlerec.com](http://battlerec.com/) is a light [boxrec](https://boxrec.com/) clone for french battlerap scene.
 
