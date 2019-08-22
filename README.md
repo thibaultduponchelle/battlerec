@@ -16,7 +16,7 @@ There are numerous labels on the website that you can click to navigate :
 
 - Go to a page dedicated to a **MC** (click on MC name) 
 - Go to a page dedicated to a **League** (click on league in event page) 
-- Go to a page dedicated to a **Event** (click on event name in main page or league page) 
+- Go to a page dedicated to an **Event** (click on event name in main page or league page) 
 - Or go back to **Main page** (click on logo)
 
 ![Navigate on battlerec](doc/battlerecnavigation.png)
