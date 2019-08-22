@@ -14,7 +14,7 @@ Bigup to all Battle MCs, this is thanks to you :kissing_heart: and event organiz
 
 It is written in Perl :heart: and the web framework [Mojolicious](https://mojolicious.org/).
 
-The data are initially written in a csv file [data.csv](https://github.com/thibaultduponchelle/battlerec/blob/master/data.csv)
+The data are initially in a csv file [data.csv](https://github.com/thibaultduponchelle/battlerec/blob/master/data.csv)
 
 Then imported in [MongoDB](https://www.mongodb.com/) using the driver [Mango](https://metacpan.org/pod/Mango).
 
