@@ -24,11 +24,11 @@ It also uses [bootstrap](https://getbootstrap.com/) for styling tables and badge
 
 ### Data flow 
 
-![Data import flow](battlerecdb.png)
+![Data import flow](doc/battlerecdb.png)
 
 ### Serving the website 
 
-![Hypnotoad serving battlerec](battlerecserver.png)
+![Hypnotoad serving battlerec](doc/battlerecserver.png)
 
 ### Development
 
