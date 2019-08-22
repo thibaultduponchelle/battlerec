@@ -29,3 +29,11 @@ It also uses [bootstrap](https://getbootstrap.com/) for styling tables and badge
 ### Serving the website 
 
 ![Hypnotoad serving battlerec](battlerecserver.png)
+
+### Development
+
+- **setup.sh** : To setup the dev environment 
+- **data.csv** : contains list of battles 
+- **initdb.sh** : remove data from mongodb then import new data from data.csv file
+
+Use **morbo script/battle_rec** to start serving your [localhost instance](http://localhost:3000)
