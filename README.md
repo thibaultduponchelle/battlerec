@@ -8,7 +8,13 @@ This is the code running [battlerec.com](http://battlerec.com/)
 
 [battlerec.com](http://battlerec.com/) is a light [boxrec](https://boxrec.com/) clone for french battlerap scene.
 
-Bigup to all Battle MCs, this is thanks to you :kissing_heart: and event organizers that we can enjoy epic battles and have a lot of fun.  
+Bigup to all Battle MCs, this is thanks to you :kissing_heart: and event organizers that we can enjoy epic battles and have a lot of fun.
+
+## Website navigation 
+
+There are numerous labels on the website that you can click to navigate towards a page dedicated to a **MC** (click on MC name) or **League** (click on league in event page) or **Event** (click on event name in main page or league page) or go back to **Main page** (click on logo)
+
+![Navigate on battlerec](doc/battlerecnavigation.png)
 
 ## Technical stack 
 
