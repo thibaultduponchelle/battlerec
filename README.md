@@ -36,4 +36,4 @@ It also uses [bootstrap](https://getbootstrap.com/) for styling tables and badge
 - **data.csv** : contains list of battles 
 - **initdb.sh** : remove data from mongodb then import new data from data.csv file
 
-Use **morbo script/battle_rec** to start serving your [localhost instance](http://localhost:3000)
+Use `morbo script/battle_rec` to start serving your [localhost instance](http://localhost:3000)
