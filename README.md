@@ -45,7 +45,7 @@ With some [Bootstrap](https://getbootstrap.com/) for styling tables/badges/butto
 
 ### Development
 
-- [setup.sh](setup.sh) : To setup the dev environment 
+- [setup.sh](setup.sh) : to setup the dev environment 
 - [data.csv](data.csv) : contains list of battles 
 - [initdb.sh](init.sh) : remove data from mongodb then import new data from data.csv file. Very first load of the website will be slow as it has to precompute the data (`battles` -> `pbattles`) 
 
