@@ -31,9 +31,9 @@ Then imported in [MongoDB](https://www.mongodb.com/) using `mongoimport`.
 
 Then the data is retrieved thanks to the driver [Mango](https://metacpan.org/pod/Mango).
 
-And served by [hypnotoad](https://mojolicious.org/perldoc/Mojo/Server/Hypnotoad) (from [Mojolicious](https://mojolicious.org/)).
+And served by [Hypnotoad](https://mojolicious.org/perldoc/Mojo/Server/Hypnotoad) (from [Mojolicious](https://mojolicious.org/)).
 
-With some [bootstrap](https://getbootstrap.com/) for styling tables/badges/buttons.
+With some [Bootstrap](https://getbootstrap.com/) for styling tables/badges/buttons.
 
 ### Data flow 
 
