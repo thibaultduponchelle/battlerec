@@ -56,7 +56,6 @@ sub record($$) {
   return "$v-$d-$n";
 }
 
-
 # This action will prepare an optimized table where all MC palmares is computed so that next time we just have to select and print lines
 sub precompute {
     print "We have to precompute... Please wait a moment\n";
@@ -76,7 +75,6 @@ sub precompute {
     } 
 }
 
- 
 # This action will render the battle MC recap
 sub mc {
   my $self = shift;
