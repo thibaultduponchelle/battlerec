@@ -69,7 +69,7 @@
             <%# Result battle %>
             <% %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
             <td><a href="/edition/<%=$b->{edition}%>"><div class="text-dark"><u><strong><%= $b->{edition} %></strong></u></div></a></td>
-            <% my $btncolor = "btn-default"; if(exists $colors{$b->{resultat}}) { $btncolor = "btn-" . $colors{$b->{resultat}}; } %>
+            <% my $btncolor = "btn-default"; if(exists $colors{$resultat}) { $btncolor = "btn-" . $colors{$resultat}; } %>
             <td class="text-center"><button type="button" class="btn <%= $btncolor %> btn-sm" disabled="disabled"><%= $resultat %></button></td>
             <td class="text-center"><% if($b->{video}) { %><a href="<%= $b->{video} %>" target="_blank"><img src="/img/play.jpg"/><% } %></a></td>
           </tr>
