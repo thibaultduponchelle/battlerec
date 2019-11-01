@@ -56,3 +56,9 @@ Use `morbo script/battle_rec` to start serving your [localhost instance](http://
 - [lib_systemd_system_battlerec.service](lib_systemd_system_battlerec.service) : this file goes in **/lib/systemd/system/battlerec.service**
 
 Use `service battlerec start` to serve your application
+
+## ToDoList
+
+- Articles (md to html)
+
+- Random memes
