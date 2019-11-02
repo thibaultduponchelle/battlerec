@@ -62,3 +62,5 @@ Use `service battlerec start` to serve your application
 - Articles (md to html)
 
 - Random memes
+
+- Ranking
