@@ -64,3 +64,4 @@ Use `service battlerec start` to serve your application
 - Random memes
 
 - Ranking (Elo with weights)
+
