@@ -66,3 +66,4 @@ Use `service battlerec start` to serve your application
 - Ranking (Elo with weights)
 
 - Improve security (service script ?)
+
