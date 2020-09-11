@@ -59,7 +59,7 @@ sub record($$) {
 # This action will prepare an optimized table where all MC palmares is computed so that next time we just have to select and print lines
 sub precompute {
     print "We have to precompute... Please wait a moment\n";
-    my $docs = mango->db("battlerec")->collection("battles")->find()->sort({ date => -1 })->limit(1000);
+    my $docs = mango->db("battlerec")->collection("battles")->find()->sort({ date => -1 })->limit(10000);
     while (my $d = $docs->next) { 
       my %battle = ();
       foreach my $k (keys %$d) {
