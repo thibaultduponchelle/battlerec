@@ -109,7 +109,7 @@ sub index {
 
   my $pcount = mango->db("battlerec")->collection("pbattles")->find()->count();
   precompute() if($pcount <= 0);
-  my $docs = mango->db("battlerec")->collection("pbattles")->find()->sort({ date => -1 })->limit(1000);
+  my $docs = mango->db("battlerec")->collection("pbattles")->find()->sort({ date => -1 })->limit(10000);
   while (my $d = $docs->next) { 
     my %battle = ();
     foreach my $k (keys %$d) {
@@ -134,7 +134,7 @@ sub edition {
 
   my $pcount = mango->db("battlerec")->collection("pbattles")->find()->count();
   precompute() if($pcount <= 0);
-  my $docs = mango->db("battlerec")->collection("pbattles")->find({ edition => $edition })->sort({ date => -1 })->limit(1000);
+  my $docs = mango->db("battlerec")->collection("pbattles")->find({ edition => $edition })->sort({ date => -1 })->limit(10000);
   while (my $d = $docs->next) { 
     my %battle = ();
     foreach my $k (keys %$d) {
@@ -159,7 +159,7 @@ sub ligue {
 
   my $pcount = mango->db("battlerec")->collection("pbattles")->find()->count();
   precompute() if($pcount <= 0);
-  my $docs = mango->db("battlerec")->collection("pbattles")->find({ ligue => $ligue })->sort({ date => -1 })->limit(1000);
+  my $docs = mango->db("battlerec")->collection("pbattles")->find({ ligue => $ligue })->sort({ date => -1 })->limit(10000);
   while (my $d = $docs->next) { 
     my %battle = ();
     foreach my $k (keys %$d) {
