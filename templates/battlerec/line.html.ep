@@ -12,7 +12,7 @@
       <% my %colors = ( V => "success", D => "danger", N => "primary", P => "warning" ); %>  
       <td>
         <% foreach my $r (split "", $b->{derniersmc1}) { 
-          <% my $badgecolor = "badge-default"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
+          <% my $badgecolor = "badge-secondary"; if(exists $colors{$r}) { $badgecolor = "badge-" . $colors{$r}; } %>
           <div class="badge <%= $badgecolor %>">&nbsp;</div>
         <% } %>
       </td>
